@@ -48,6 +48,11 @@
             this.LikedPages = new System.Windows.Forms.Button();
             this.listBoxLikedPages = new System.Windows.Forms.ListBox();
             this.checkBoxRememberMe = new System.Windows.Forms.CheckBox();
+            this.postTiming = new System.Windows.Forms.Button();
+            this.userPost = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.userHours = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -245,11 +250,60 @@
             this.checkBoxRememberMe.UseVisualStyleBackColor = true;
             this.checkBoxRememberMe.CheckedChanged += new System.EventHandler(this.checkBoxRememberMe_CheckedChanged);
             // 
+            // postTiming
+            // 
+            this.postTiming.Location = new System.Drawing.Point(940, 12);
+            this.postTiming.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.postTiming.Name = "postTiming";
+            this.postTiming.Size = new System.Drawing.Size(159, 35);
+            this.postTiming.TabIndex = 62;
+            this.postTiming.Text = "Post timing";
+            this.postTiming.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.postTiming.UseVisualStyleBackColor = true;
+            this.postTiming.Click += new System.EventHandler(this.postTiming_Click);
+            // 
+            // userPost
+            // 
+            this.userPost.Location = new System.Drawing.Point(940, 63);
+            this.userPost.Name = "userPost";
+            this.userPost.Size = new System.Drawing.Size(159, 26);
+            this.userPost.TabIndex = 63;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(788, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 20);
+            this.label4.TabIndex = 64;
+            this.label4.Text = "Enter youre post :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(788, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 20);
+            this.label5.TabIndex = 65;
+            this.label5.Text = "Hours till upload :";
+            // 
+            // userHours
+            // 
+            this.userHours.Location = new System.Drawing.Point(940, 118);
+            this.userHours.Name = "userHours";
+            this.userHours.Size = new System.Drawing.Size(159, 26);
+            this.userHours.TabIndex = 66;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 1011);
+            this.Controls.Add(this.userHours);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.userPost);
+            this.Controls.Add(this.postTiming);
             this.Controls.Add(this.checkBoxRememberMe);
             this.Controls.Add(this.listBoxLikedPages);
             this.Controls.Add(this.LikedPages);
@@ -293,6 +347,11 @@
         private System.Windows.Forms.Button LikedPages;
         private System.Windows.Forms.ListBox listBoxLikedPages;
         private System.Windows.Forms.CheckBox checkBoxRememberMe;
+        private System.Windows.Forms.Button postTiming;
+        private System.Windows.Forms.TextBox userPost;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox userHours;
     }
 }
 

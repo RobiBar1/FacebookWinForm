@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using FacebookLogic;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 
@@ -55,8 +56,9 @@ namespace BasicFacebookFeatures
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             Clipboard.SetText("design.patterns20cc");
+            LoginResult = FacebookService.Connect("EAADN5bDyRIYBAHkwSPl9RrDf4jG4HiGF5k05LwoHxExTNGg4LP6Fbgbc4ykFfkiKY7qxVSJiHGLe5Pfo2t8wWcqkZBL8QtbBGdWaW6ZAxbYd7G9fQHkzLzYyneebcIkOaZAIYOYt4Ud0aNeqZCKISqplgzbuWlEoPs792n11Gg33LtOsS0hkIjLyHKn0WeYZD");
 
-            LoginResult LoginResult = FacebookService.Login(
+           /* LoginResult LoginResult = FacebookService.Login(
                     "226386399872134",
                     "email",
                     "public_profile",
@@ -72,6 +74,7 @@ namespace BasicFacebookFeatures
                     "user_photos",
                     "user_posts",
                     "user_videos");
+           */
 
             if (!string.IsNullOrEmpty(LoginResult.AccessToken))
             {
@@ -209,5 +212,23 @@ namespace BasicFacebookFeatures
 
         }
 
+        private void postTiming_Click(object sender, EventArgs e)
+        {
+            MessageScheduling messageScheduling = new MessageScheduling();
+
+            try
+            {
+                messageScheduling.UserMessage = userPost.Text;
+                messageScheduling.UserHours = userHours.Text;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
+            
+        }
+
+      
     }
 }
