@@ -9,9 +9,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using FacebookLogic;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
+using FacebookLogic;
 
 
 namespace BasicFacebookFeatures
@@ -21,10 +21,17 @@ namespace BasicFacebookFeatures
 
         private LoginResult m_LoginResult;
         private User m_LoggedInUser;
+        private Status m_StatusToPost;
         public FormMain()
         {
             InitializeComponent();
             FacebookService.s_CollectionLimit = 100;
+        }
+
+        public Status StatusToPost
+        {
+            get { return m_StatusToPost; }
+            set { m_StatusToPost = value;}
         }
 
         public LoginResult LoginResult
@@ -207,28 +214,26 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void checkBoxRememberMe_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void postTiming_Click(object sender, EventArgs e)
         {
             MessageScheduling messageScheduling = new MessageScheduling();
 
             try
             {
-                messageScheduling.UserMessage = userPost.Text;
-                messageScheduling.UserHours = userHours.Text;
+                messageScheduling.PostUpload += new Action<MessageScheduling>(ShowOnUiThatPostIsUpload);
+                messageScheduling.SchedulingMessage(LoggedInUser, userPost.Text, userHours.Text);
+
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
-
-            
         }
 
-      
+        private void ShowOnUiThatPostIsUpload(MessageScheduling i_MessageScheduling)
+        {
+            MessageBox.Show("Post was uploaded");
+        }
+
     }
 }
