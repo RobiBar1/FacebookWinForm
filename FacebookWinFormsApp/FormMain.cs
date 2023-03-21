@@ -19,6 +19,23 @@ namespace BasicFacebookFeatures
     public partial class FormMain : Form
     {
 
+        private const string k_LoginError = "First you need to be logged in";
+        private const string k_AppId = "226386399872134";
+        private static readonly string[] sr_Paremeters = {
+                    "email",
+                    "public_profile",
+                    "user_age_range",
+                    "user_birthday",
+                    "user_events",
+                    "user_friends",
+                    "user_gender",
+                    "user_hometown",
+                    "user_likes",
+                    "user_link",
+                    "user_location",
+                    "user_photos",
+                    "user_posts",
+                    "user_videos" };
         private LoginResult m_LoginResult;
         private User m_LoggedInUser;
         private Status m_StatusToPost;
@@ -65,23 +82,7 @@ namespace BasicFacebookFeatures
             Clipboard.SetText("design.patterns20cc");
             LoginResult = FacebookService.Connect("EAADN5bDyRIYBAHkwSPl9RrDf4jG4HiGF5k05LwoHxExTNGg4LP6Fbgbc4ykFfkiKY7qxVSJiHGLe5Pfo2t8wWcqkZBL8QtbBGdWaW6ZAxbYd7G9fQHkzLzYyneebcIkOaZAIYOYt4Ud0aNeqZCKISqplgzbuWlEoPs792n11Gg33LtOsS0hkIjLyHKn0WeYZD");
 
-           /* LoginResult LoginResult = FacebookService.Login(
-                    "226386399872134",
-                    "email",
-                    "public_profile",
-                    "user_age_range",
-                    "user_birthday",
-                    "user_events",
-                    "user_friends",
-                    "user_gender",
-                    "user_hometown",
-                    "user_likes",
-                    "user_link",
-                    "user_location",
-                    "user_photos",
-                    "user_posts",
-                    "user_videos");
-           */
+            /* LoginResult LoginResult = FacebookService.Login(k_AppId,sr_Paremeters)*/
 
             if (!string.IsNullOrEmpty(LoginResult.AccessToken))
             {
@@ -232,8 +233,56 @@ namespace BasicFacebookFeatures
 
         private void ShowOnUiThatPostIsUpload(MessageScheduling i_MessageScheduling)
         {
-            MessageBox.Show("Post was uploaded");
+            if(i_MessageScheduling.UploadSuccessfully)
+            {
+                MessageBox.Show("Post was uploaded");
+            }
+            else
+            {
+                MessageBox.Show("Post wasn't uploaded, please try again");
+            }
         }
 
+        private void fetchPosts()
+        {
+            listBoxViewPosts.Items.Clear();
+
+            foreach (Post post in m_LoggedInUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    listBoxViewPosts.Items.Add(post.Message);
+                }
+                else if (post.Caption != null)
+                {
+                    listBoxViewPosts.Items.Add(post.Caption);
+                }
+                else
+                {
+                    listBoxViewPosts.Items.Add(string.Format("[{0}]", post.Type));
+                }
+            }
+
+            if (listBoxViewPosts.Items.Count == 0)
+            {
+                MessageBox.Show("No Posts to retrieve :(");
+            }
+        }
+
+        private void buttonViewPosts_Click(object sender, EventArgs e)
+        {
+            fetchPosts();
+        }
+
+        private void buttonMyBestFriends_Click(object sender, EventArgs e)
+        {
+            if(LoggedInUser != null)
+            {
+                FormFriends something =  new FormFriends(this);
+                something.ShowDialog();
+
+
+            }
+        }
     }
 }

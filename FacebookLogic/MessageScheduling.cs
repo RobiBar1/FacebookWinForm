@@ -17,8 +17,15 @@ namespace FacebookLogic
         private string m_UserHours;
         private int m_IntHours;
         private User m_LoggedInUser;
+        private bool m_UploadSuccessfully;
         private System.Timers.Timer m_TimerToUploadPost = null;
         public event Action<MessageScheduling> PostUpload;
+
+        public bool UploadSuccessfully
+        {
+            get { return m_UploadSuccessfully; }
+            set { m_UploadSuccessfully = value; }
+        }
 
         private User LoggedInUser
         {
@@ -90,7 +97,7 @@ namespace FacebookLogic
             LoggedInUser = i_User;
             UserHours = i_Hours;
             UserMessage = i_Text;
-            TimerToUploadPost = new System.Timers.Timer(IntHours * 10 * 1000);// *60 );
+            TimerToUploadPost = new System.Timers.Timer(IntHours * 10 * 1000);//IntHours * 60 * 1000 * 60 ); the real forumola for hours.
             TimerToUploadPost.Elapsed += TimerElapsed;
             TimerToUploadPost.Enabled = true;
             TimerToUploadPost.Start();
@@ -101,13 +108,16 @@ namespace FacebookLogic
             try
             {
                 TimerToUploadPost.Stop();
-                //Status postStatus = LoggedInUser.PostStatus(UserMessage); throw exeption that the catch dont know how to handle
-                OnTimerEndPostUpload();
+                Status postStatus = LoggedInUser.PostStatus(UserMessage);
+                UploadSuccessfully = true;
             }
             catch (Exception ex)
             {
-                throw ex;
+                UploadSuccessfully = false;
             }
+            finally
+            { OnTimerEndPostUpload(); }
+
         }
 
         protected virtual void OnTimerEndPostUpload()
