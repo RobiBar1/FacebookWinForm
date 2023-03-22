@@ -165,7 +165,6 @@ namespace BasicFacebookFeatures
             if (ListBox_Events.SelectedItems.Count == 1)
             {
                 Event selectedEvent = ListBox_Events.SelectedItem as Event;
-                //  pictureBoxEvent.LoadAsync(selectedEvent.Cover.SourceURL);
             }
         }
 
@@ -278,10 +277,25 @@ namespace BasicFacebookFeatures
         {
             if(LoggedInUser != null)
             {
-                FormFriends something =  new FormFriends(this);
-                something.ShowDialog();
+                new FormFriends(this).ShowDialog();
+            }
 
+            else
+            {
+                MessageBox.Show(k_LoginError);
+            }
+        }
 
+        private void buttonActivityStatics_Click(object sender, EventArgs e)
+        {
+            if (LoggedInUser != null)
+            {
+                new FormActivityStatics(this).ShowDialog();
+            }
+
+            else
+            {
+                MessageBox.Show(k_LoginError);
             }
         }
     }

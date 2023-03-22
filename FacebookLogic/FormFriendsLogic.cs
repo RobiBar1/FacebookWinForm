@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Facebook;
 
 namespace FacebookLogic
 {
@@ -20,16 +22,16 @@ namespace FacebookLogic
             LoggedInUser = i_LoggedInUser;
         }
 
-        private bool CalcolateHasHAppned
-        {set; get;}
+        private bool CalculateHasHappened
+        { set; get; }
         public int MinLikedImage
-        {set; get;}
+        { set; get; }
 
         public int MaxLikedImage
         { set; get; }
 
         public int AvrgLikedImage
-        {set;get;}
+        { set; get; }
         private User LoggedInUser
         {
             set
@@ -43,37 +45,37 @@ namespace FacebookLogic
             }
         }
 
-        public void CalcolateMinMaxAvrgLikes()
+        public void CalculateMinMaxAvgLikes()
         {
-            if (!CalcolateHasHAppned)
-            {
-                int ImageCounter = 0;
-                foreach (Post post in LoggedInUser.Posts)
-                {
-                    if (post.Type == FacebookWrapper.ObjectModel.Post.eType.photo)
-                    {
-                        if (post.LikedBy.Count <= m_MinLikedImage)
-                        {
-                            MinLikedImage = post.LikedBy.Count;
-                        }
+           
 
-                        if (post.LikedBy.Count >= MaxLikedImage)
-                        {
-                            MaxLikedImage = post.LikedBy.Count;
-                        }
+            /*  foreach (Post post in LoggedInUser.Posts)
+              {
+                  if (post.Type == FacebookWrapper.ObjectModel.Post.eType.photo)
+                  {
+                      if (post.LikedBy.Count <= m_MinLikedImage)
+                      {
+                          MinLikedImage = post.LikedBy.Count;
+                      }
 
-                        ImageCounter++;
-                        AvrgLikedImage += post.LikedBy.Count;
-                    }
-                }
+                      if (post.LikedBy.Count >= MaxLikedImage)
+                      {
+                          MaxLikedImage = post.LikedBy.Count;
+                      }
 
-                if (ImageCounter != 0)
-                {
-                    AvrgLikedImage = AvrgLikedImage / ImageCounter;
-                }
+                      imageCounter++;
+                      AvrgLikedImage += post.LikedBy.Count;
+                  }
+              }
 
-                CalcolateHasHAppned = true;
-            }
+              if (imageCounter != 0)
+              {
+                  AvrgLikedImage = AvrgLikedImage / imageCounter;
+              }
+
+              CalculateHasHappened = true;
+            */
         }
     }
 }
+

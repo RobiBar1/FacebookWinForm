@@ -39,6 +39,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityStaticsLogic.cs" />
     <Compile Include="AppSetting.cs" />
     <Compile Include="FormFriendsLogic.cs" />
     <Compile Include="MessageScheduling.cs" />

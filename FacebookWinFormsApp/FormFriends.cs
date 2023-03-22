@@ -30,7 +30,7 @@ namespace BasicFacebookFeatures
 
         private void buttonFavoritePhoto_Click(object sender, EventArgs e)
         {
-            m_FormLogic.CalcolateMinMaxAvrgLikes();
+            m_FormLogic.CalculateMinMaxAvgLikes();
             MessageBox.Show(String.Format("Your max likes is {0}", FormLogic.MaxLikedImage)); 
         }
 
