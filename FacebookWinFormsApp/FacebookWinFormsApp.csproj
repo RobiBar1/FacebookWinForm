@@ -95,6 +95,12 @@
     <Compile Include="FormActivityStatics.Designer.cs">
       <DependentUpon>FormActivityStatics.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBasicDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBasicDetails.Designer.cs">
+      <DependentUpon>FormBasicDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFriends.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormActivityStatics.resx">
       <DependentUpon>FormActivityStatics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBasicDetails.resx">
+      <DependentUpon>FormBasicDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFriends.resx">
       <DependentUpon>FormFriends.cs</DependentUpon>
@@ -147,6 +156,10 @@
       <Project>{9e2bf52b-c573-4432-b3a9-ff4283a6b74d}</Project>
       <Name>FacebookLogic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\facebookLikeImage.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

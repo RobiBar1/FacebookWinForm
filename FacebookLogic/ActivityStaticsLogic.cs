@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
 namespace FacebookLogic
@@ -20,7 +15,6 @@ namespace FacebookLogic
         {
             r_UserLoggedIn = i_UserLoggedIn;
         }
-
         public int MaxMonth
         {
             get
