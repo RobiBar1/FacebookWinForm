@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using BasicFacebookFeatures.Properties;
 using FacebookLogic;
 
 namespace BasicFacebookFeatures
@@ -8,11 +10,15 @@ namespace BasicFacebookFeatures
     {
         private readonly FormMain r_FormMain;
         private readonly FriendsLogic m_Logic;
+        private readonly Image r_BackgroundImage = Resources.facebookFriends;
+        private const string k_ErrorMessageTitle = "Cannot import data";
+        private const string k_ErrorMessage = "This information cannot currently be uploaded from Facebook servers";
         public FormFriends(FormMain i_FormMain)
         {
             r_FormMain = i_FormMain;
             m_Logic =  new FriendsLogic(i_FormMain.LoggedInUser);
             InitializeComponent();
+            BackgroundImage = r_BackgroundImage;
         }
 
         private FriendsLogic Logic
@@ -25,12 +31,12 @@ namespace BasicFacebookFeatures
             try
             {
                 m_Logic.CalculateMinMaxAvgLikes();
-                MessageBox.Show(String.Format("Your max likes is {0}", Logic.MaxLikedImage));
+                MessageBox.Show(String.Format("Your max likes on a picture is : {0}", Logic.MaxLikedImage),"Most popular picture");
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show("This information cannot currently be uploaded from Facebook servers");
+                MessageBox.Show(k_ErrorMessage, k_ErrorMessageTitle);
             }
         
         }
@@ -40,12 +46,12 @@ namespace BasicFacebookFeatures
             try
             {
                 m_Logic.CalculateMinMaxAvgLikes();
-                MessageBox.Show(String.Format("Your max likes is {0}", Logic.MinLikedImage));
+                MessageBox.Show(String.Format("Your minimum likes on a picture is: {0}", Logic.MinLikedImage), "Least popular picture");
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show("This information cannot currently be uploaded from Facebook servers");
+                MessageBox.Show(k_ErrorMessage, k_ErrorMessageTitle);
             }
 
         }
@@ -55,12 +61,12 @@ namespace BasicFacebookFeatures
             try
             {
                 m_Logic.CalculateMinMaxAvgLikes();
-                MessageBox.Show(String.Format("Your max likes is {0}", Logic.AvrgLikedImage));
+                MessageBox.Show(String.Format("Your average likes on a picture is: {0}", Logic.AvrgLikedImage), "Average picture");
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show("This information cannot currently be uploaded from Facebook servers");
+                MessageBox.Show(k_ErrorMessage, k_ErrorMessageTitle);
             }
 
         }

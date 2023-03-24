@@ -1,4 +1,6 @@
-﻿namespace BasicFacebookFeatures
+﻿using System.Windows.Forms;
+
+namespace BasicFacebookFeatures
 {
     partial class FormFriends
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFriends));
             this.buttonFavoritePhoto = new System.Windows.Forms.Button();
             this.buttonLeastFavoritePhoto = new System.Windows.Forms.Button();
             this.buttonAveragePhoto = new System.Windows.Forms.Button();
@@ -70,13 +73,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 421);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(473, 421);
             this.Controls.Add(this.buttonAveragePhoto);
             this.Controls.Add(this.buttonLeastFavoritePhoto);
             this.Controls.Add(this.buttonFavoritePhoto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormFriends";
-            this.Text = "FormFriends";
+            this.Text = "Popularity Analysis";
             this.ResumeLayout(false);
 
         }

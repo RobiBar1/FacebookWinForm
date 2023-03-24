@@ -1,4 +1,7 @@
-﻿namespace BasicFacebookFeatures
+﻿using BasicFacebookFeatures.Properties;
+using System.Windows.Forms;
+
+namespace BasicFacebookFeatures
 {
     partial class FormMain
     {
@@ -29,6 +32,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
@@ -270,7 +274,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 494);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1027, 591);
             this.Controls.Add(this.buttonBasicUserDetails);
             this.Controls.Add(this.buttonActivityStatics);
             this.Controls.Add(this.buttonMyBestFriends);
@@ -283,10 +288,11 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1"; 
+            this.Text = "Home Page";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

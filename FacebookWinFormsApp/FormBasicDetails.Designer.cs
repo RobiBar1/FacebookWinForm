@@ -29,6 +29,7 @@ namespace BasicFacebookFeatures
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBasicDetails));
             this.button_Albums = new System.Windows.Forms.Button();
             this.ListBox_Album = new System.Windows.Forms.ListBox();
             this.button_Events = new System.Windows.Forms.Button();
@@ -137,8 +138,9 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.button_Events);
             this.Controls.Add(this.ListBox_Album);
             this.Controls.Add(this.button_Albums);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBasicDetails";
-            this.Text = "FormBasicDetails";
+            this.Text = "Basic User Details";
             this.ResumeLayout(false);
 
         }

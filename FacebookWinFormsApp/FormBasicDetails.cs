@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BasicFacebookFeatures.Properties;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures
@@ -14,10 +15,14 @@ namespace BasicFacebookFeatures
     public partial class FormBasicDetails : Form
     {
         private readonly FormMain r_FormMain;
+        private readonly Image r_BackgroundImage = Resources.facebookDetails;
+
         public FormBasicDetails(FormMain i_FormMain)
         {
             r_FormMain = i_FormMain;
             InitializeComponent();
+            BackgroundImage = r_BackgroundImage;
+            BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void button_Albums_Click(object sender, EventArgs e)
         {
@@ -114,5 +119,6 @@ namespace BasicFacebookFeatures
             }
         }
 
+      
     }
 }

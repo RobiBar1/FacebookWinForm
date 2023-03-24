@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace BasicFacebookFeatures
 {
     partial class FormActivityStatics
@@ -29,6 +31,7 @@ namespace BasicFacebookFeatures
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormActivityStatics));
             this.buttonMaximumActivity = new System.Windows.Forms.Button();
             this.buttonMinimalActivity = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -57,11 +60,13 @@ namespace BasicFacebookFeatures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(723, 450);
             this.Controls.Add(this.buttonMinimalActivity);
             this.Controls.Add(this.buttonMaximumActivity);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormActivityStatics";
-            this.Text = "FormActivityStatics";
+            this.Text = "User Activity Statics";
             this.ResumeLayout(false);
 
         }

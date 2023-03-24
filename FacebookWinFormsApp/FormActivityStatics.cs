@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BasicFacebookFeatures.Properties;
 using FacebookLogic;
 using FacebookWrapper.ObjectModel;
 
@@ -15,6 +16,7 @@ namespace BasicFacebookFeatures
 {
     public partial class FormActivityStatics : Form
     {
+        private readonly Image r_BackgroundImage = Resources.statisticFacebook;
         private readonly FormMain r_FormMain;
         private readonly ActivityStaticsLogic r_activityStaticsLogic;
         private int m_MaxActivity;
@@ -26,6 +28,7 @@ namespace BasicFacebookFeatures
             InitializeComponent();
             r_FormMain = i_FormMain; 
             r_activityStaticsLogic = new ActivityStaticsLogic(r_FormMain.LoggedInUser);
+            BackgroundImage = r_BackgroundImage;
         }
 
         private void buttonMaximumActivity_Click(object sender, EventArgs e)
