@@ -38,10 +38,11 @@ namespace BasicFacebookFeatures
             // 
             // buttonFavoritePhoto
             // 
-            this.buttonFavoritePhoto.Location = new System.Drawing.Point(12, 43);
-            this.buttonFavoritePhoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonFavoritePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonFavoritePhoto.Location = new System.Drawing.Point(8, 28);
+            this.buttonFavoritePhoto.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonFavoritePhoto.Name = "buttonFavoritePhoto";
-            this.buttonFavoritePhoto.Size = new System.Drawing.Size(152, 29);
+            this.buttonFavoritePhoto.Size = new System.Drawing.Size(101, 29);
             this.buttonFavoritePhoto.TabIndex = 0;
             this.buttonFavoritePhoto.Text = "Favorite Photo";
             this.buttonFavoritePhoto.UseVisualStyleBackColor = true;
@@ -49,10 +50,11 @@ namespace BasicFacebookFeatures
             // 
             // buttonLeastFavoritePhoto
             // 
-            this.buttonLeastFavoritePhoto.Location = new System.Drawing.Point(12, 192);
-            this.buttonLeastFavoritePhoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonLeastFavoritePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonLeastFavoritePhoto.Location = new System.Drawing.Point(8, 157);
+            this.buttonLeastFavoritePhoto.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonLeastFavoritePhoto.Name = "buttonLeastFavoritePhoto";
-            this.buttonLeastFavoritePhoto.Size = new System.Drawing.Size(152, 52);
+            this.buttonLeastFavoritePhoto.Size = new System.Drawing.Size(101, 45);
             this.buttonLeastFavoritePhoto.TabIndex = 1;
             this.buttonLeastFavoritePhoto.Text = "Least favorite photo";
             this.buttonLeastFavoritePhoto.UseVisualStyleBackColor = true;
@@ -60,10 +62,11 @@ namespace BasicFacebookFeatures
             // 
             // buttonAveragePhoto
             // 
-            this.buttonAveragePhoto.Location = new System.Drawing.Point(12, 112);
-            this.buttonAveragePhoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAveragePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonAveragePhoto.Location = new System.Drawing.Point(8, 96);
+            this.buttonAveragePhoto.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonAveragePhoto.Name = "buttonAveragePhoto";
-            this.buttonAveragePhoto.Size = new System.Drawing.Size(152, 29);
+            this.buttonAveragePhoto.Size = new System.Drawing.Size(101, 27);
             this.buttonAveragePhoto.TabIndex = 2;
             this.buttonAveragePhoto.Text = "Average Photo";
             this.buttonAveragePhoto.UseVisualStyleBackColor = true;
@@ -71,15 +74,17 @@ namespace BasicFacebookFeatures
             // 
             // FormFriends
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(473, 421);
+            this.ClientSize = new System.Drawing.Size(315, 274);
             this.Controls.Add(this.buttonAveragePhoto);
             this.Controls.Add(this.buttonLeastFavoritePhoto);
             this.Controls.Add(this.buttonFavoritePhoto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FormFriends";
             this.Text = "Popularity Analysis";
             this.ResumeLayout(false);

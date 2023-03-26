@@ -33,14 +33,28 @@ namespace BasicFacebookFeatures
 
         private void buttonMaximumActivity_Click(object sender, EventArgs e)
         {
-            r_activityStaticsLogic.ActivityStatics();
-            MessageBox.Show($"The maximum number of photos you have uploaded to Facebook is: {r_activityStaticsLogic.MaxActivity} in month {r_activityStaticsLogic.MaxMonth}" );
+            try
+            {
+                r_activityStaticsLogic.ActivityStatics();
+                MessageBox.Show($"The maximum number of photos you have uploaded to Facebook is: {r_activityStaticsLogic.MaxActivity} in month {r_activityStaticsLogic.MaxMonth}", "Maximum activity");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void buttonMinimalActivity_Click(object sender, EventArgs e)
         {
-            r_activityStaticsLogic.ActivityStatics();
-            MessageBox.Show($"The minimum number of photos you have uploaded to Facebook is: {r_activityStaticsLogic.MinActivity} in month {r_activityStaticsLogic.MinMonth}");
-        }
+            try
+            {
+                r_activityStaticsLogic.ActivityStatics();
+                MessageBox.Show($"The minimum number of photos you have uploaded to Facebook is: {r_activityStaticsLogic.MinActivity} in month {r_activityStaticsLogic.MinMonth}", "Minimum activity");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+}
     }
 }

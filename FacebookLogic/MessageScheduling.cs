@@ -53,7 +53,7 @@ namespace FacebookLogic
                 }
                 else
                 {
-                    throw new ArgumentException("User message cannot be string, try again with a number .");
+                    throw new ArgumentException("The number of hours cannot be string or empty, try again with a number.");
                 }
             }
         }
@@ -72,7 +72,7 @@ namespace FacebookLogic
                 }
                 else
                 {
-                    throw new ArgumentException("User message cannot be null or empty.");
+                    throw new ArgumentException("User message cannot be empty.");
                 }
             }
         }
@@ -97,7 +97,7 @@ namespace FacebookLogic
             LoggedInUser = i_User;
             UserHours = i_Hours;
             UserMessage = i_Text;
-            TimerToUploadPost = new System.Timers.Timer(IntHours * 10 * 1000);//IntHours * 60 * 1000 * 60 ); the real forumola for hours.
+            TimerToUploadPost = new System.Timers.Timer(0.01);//IntHours * 60 * 1000 * 60 ); the real forumola for hours.
             TimerToUploadPost.Elapsed += TimerElapsed;
             TimerToUploadPost.Enabled = true;
             TimerToUploadPost.Start();

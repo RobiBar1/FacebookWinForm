@@ -60,10 +60,11 @@ namespace BasicFacebookFeatures
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(18, 18);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonLogin.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonLogin.Location = new System.Drawing.Point(12, 12);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(268, 35);
+            this.buttonLogin.Size = new System.Drawing.Size(153, 32);
             this.buttonLogin.TabIndex = 36;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -71,10 +72,10 @@ namespace BasicFacebookFeatures
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(18, 62);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonLogout.Location = new System.Drawing.Point(12, 46);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(268, 35);
+            this.buttonLogout.Size = new System.Drawing.Size(153, 41);
             this.buttonLogout.TabIndex = 52;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -84,7 +85,7 @@ namespace BasicFacebookFeatures
             // 
             this.textBoxStatus.Location = new System.Drawing.Point(0, 0);
             this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(100, 26);
+            this.textBoxStatus.Size = new System.Drawing.Size(100, 20);
             this.textBoxStatus.TabIndex = 0;
             // 
             // imageList1
@@ -95,10 +96,9 @@ namespace BasicFacebookFeatures
             // 
             // pictureBoxProfile
             // 
-            this.pictureBoxProfile.Location = new System.Drawing.Point(14, 19);
-            this.pictureBoxProfile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxProfile.Location = new System.Drawing.Point(9, 12);
             this.pictureBoxProfile.Name = "pictureBoxProfile";
-            this.pictureBoxProfile.Size = new System.Drawing.Size(120, 151);
+            this.pictureBoxProfile.Size = new System.Drawing.Size(80, 98);
             this.pictureBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxProfile.TabIndex = 41;
             this.pictureBoxProfile.TabStop = false;
@@ -112,18 +112,20 @@ namespace BasicFacebookFeatures
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBoxProfile);
-            this.panel1.Location = new System.Drawing.Point(349, 12);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(233, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(433, 182);
+            this.panel1.Size = new System.Drawing.Size(289, 125);
             this.panel1.TabIndex = 58;
             // 
             // labelBirthday
             // 
             this.labelBirthday.AutoSize = true;
-            this.labelBirthday.Location = new System.Drawing.Point(276, 134);
+            this.labelBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelBirthday.Location = new System.Drawing.Point(184, 87);
+            this.labelBirthday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBirthday.Name = "labelBirthday";
-            this.labelBirthday.Size = new System.Drawing.Size(51, 20);
+            this.labelBirthday.Size = new System.Drawing.Size(52, 17);
             this.labelBirthday.TabIndex = 47;
             this.labelBirthday.Text = "label6";
             this.labelBirthday.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -132,9 +134,11 @@ namespace BasicFacebookFeatures
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(276, 76);
+            this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelLastName.Location = new System.Drawing.Point(184, 49);
+            this.labelLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(51, 20);
+            this.labelLastName.Size = new System.Drawing.Size(52, 17);
             this.labelLastName.TabIndex = 46;
             this.labelLastName.Text = "label5";
             this.labelLastName.Visible = false;
@@ -142,9 +146,11 @@ namespace BasicFacebookFeatures
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(276, 19);
+            this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelFirstName.Location = new System.Drawing.Point(184, 12);
+            this.labelFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(51, 20);
+            this.labelFirstName.Size = new System.Drawing.Size(52, 17);
             this.labelFirstName.TabIndex = 45;
             this.labelFirstName.Text = "label4";
             this.labelFirstName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -153,47 +159,54 @@ namespace BasicFacebookFeatures
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(155, 134);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label3.Location = new System.Drawing.Point(103, 87);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 44;
             this.label3.Text = "Birthday :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(151, 76);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.Location = new System.Drawing.Point(101, 49);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
+            this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 43;
             this.label2.Text = "Last Name :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 19);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(101, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 20);
+            this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 42;
             this.label1.Text = "First Name :";
             // 
             // checkBoxRememberMe
             // 
             this.checkBoxRememberMe.AutoSize = true;
-            this.checkBoxRememberMe.Location = new System.Drawing.Point(18, 108);
-            this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxRememberMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.checkBoxRememberMe.Location = new System.Drawing.Point(12, 91);
+            this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.checkBoxRememberMe.Name = "checkBoxRememberMe";
-            this.checkBoxRememberMe.Size = new System.Drawing.Size(140, 24);
+            this.checkBoxRememberMe.Size = new System.Drawing.Size(119, 21);
             this.checkBoxRememberMe.TabIndex = 61;
             this.checkBoxRememberMe.Text = "Remember me";
             this.checkBoxRememberMe.UseVisualStyleBackColor = true;
             // 
             // postTiming
             // 
-            this.postTiming.Location = new System.Drawing.Point(282, 260);
-            this.postTiming.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.postTiming.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.postTiming.Location = new System.Drawing.Point(12, 300);
             this.postTiming.Name = "postTiming";
-            this.postTiming.Size = new System.Drawing.Size(159, 35);
+            this.postTiming.Size = new System.Drawing.Size(153, 30);
             this.postTiming.TabIndex = 62;
             this.postTiming.Text = "Post timing";
             this.postTiming.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -202,44 +215,48 @@ namespace BasicFacebookFeatures
             // 
             // userPost
             // 
-            this.userPost.Location = new System.Drawing.Point(449, 330);
-            this.userPost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userPost.Location = new System.Drawing.Point(341, 284);
+            this.userPost.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.userPost.Name = "userPost";
-            this.userPost.Size = new System.Drawing.Size(159, 26);
+            this.userPost.Size = new System.Drawing.Size(107, 20);
             this.userPost.TabIndex = 63;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(287, 330);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.Location = new System.Drawing.Point(186, 287);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 20);
+            this.label4.Size = new System.Drawing.Size(121, 17);
             this.label4.TabIndex = 64;
             this.label4.Text = "Enter youre post :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(291, 397);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label5.Location = new System.Drawing.Point(186, 331);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 20);
+            this.label5.Size = new System.Drawing.Size(118, 17);
             this.label5.TabIndex = 65;
             this.label5.Text = "Hours till upload :";
             // 
             // userHours
             // 
-            this.userHours.Location = new System.Drawing.Point(449, 391);
-            this.userHours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userHours.Location = new System.Drawing.Point(341, 328);
+            this.userHours.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.userHours.Name = "userHours";
-            this.userHours.Size = new System.Drawing.Size(159, 26);
+            this.userHours.Size = new System.Drawing.Size(107, 20);
             this.userHours.TabIndex = 66;
             // 
             // buttonMyBestFriends
             // 
-            this.buttonMyBestFriends.Location = new System.Drawing.Point(18, 260);
-            this.buttonMyBestFriends.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonMyBestFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonMyBestFriends.Location = new System.Drawing.Point(12, 141);
             this.buttonMyBestFriends.Name = "buttonMyBestFriends";
-            this.buttonMyBestFriends.Size = new System.Drawing.Size(159, 35);
+            this.buttonMyBestFriends.Size = new System.Drawing.Size(153, 24);
             this.buttonMyBestFriends.TabIndex = 69;
             this.buttonMyBestFriends.Text = "My Best Friends";
             this.buttonMyBestFriends.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -248,10 +265,10 @@ namespace BasicFacebookFeatures
             // 
             // buttonActivityStatics
             // 
-            this.buttonActivityStatics.Location = new System.Drawing.Point(18, 330);
-            this.buttonActivityStatics.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonActivityStatics.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonActivityStatics.Location = new System.Drawing.Point(15, 186);
             this.buttonActivityStatics.Name = "buttonActivityStatics";
-            this.buttonActivityStatics.Size = new System.Drawing.Size(159, 35);
+            this.buttonActivityStatics.Size = new System.Drawing.Size(150, 23);
             this.buttonActivityStatics.TabIndex = 70;
             this.buttonActivityStatics.Text = "Activity statics";
             this.buttonActivityStatics.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -260,10 +277,10 @@ namespace BasicFacebookFeatures
             // 
             // buttonBasicUserDetails
             // 
-            this.buttonBasicUserDetails.Location = new System.Drawing.Point(13, 409);
-            this.buttonBasicUserDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonBasicUserDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonBasicUserDetails.Location = new System.Drawing.Point(12, 238);
             this.buttonBasicUserDetails.Name = "buttonBasicUserDetails";
-            this.buttonBasicUserDetails.Size = new System.Drawing.Size(159, 35);
+            this.buttonBasicUserDetails.Size = new System.Drawing.Size(153, 23);
             this.buttonBasicUserDetails.TabIndex = 71;
             this.buttonBasicUserDetails.Text = "Basic User Details";
             this.buttonBasicUserDetails.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -272,10 +289,10 @@ namespace BasicFacebookFeatures
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1027, 591);
+            this.ClientSize = new System.Drawing.Size(523, 418);
             this.Controls.Add(this.buttonBasicUserDetails);
             this.Controls.Add(this.buttonActivityStatics);
             this.Controls.Add(this.buttonMyBestFriends);
@@ -288,11 +305,12 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home Page";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

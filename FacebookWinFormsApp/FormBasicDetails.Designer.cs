@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace BasicFacebookFeatures
 {
     partial class FormBasicDetails
@@ -42,10 +44,10 @@ namespace BasicFacebookFeatures
             // 
             // button_Albums
             // 
-            this.button_Albums.Location = new System.Drawing.Point(4, 34);
-            this.button_Albums.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Albums.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button_Albums.Location = new System.Drawing.Point(3, 22);
             this.button_Albums.Name = "button_Albums";
-            this.button_Albums.Size = new System.Drawing.Size(112, 35);
+            this.button_Albums.Size = new System.Drawing.Size(142, 23);
             this.button_Albums.TabIndex = 56;
             this.button_Albums.Text = "View albums";
             this.button_Albums.UseVisualStyleBackColor = true;
@@ -54,19 +56,17 @@ namespace BasicFacebookFeatures
             // ListBox_Album
             // 
             this.ListBox_Album.FormattingEnabled = true;
-            this.ListBox_Album.ItemHeight = 20;
-            this.ListBox_Album.Location = new System.Drawing.Point(4, 92);
-            this.ListBox_Album.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ListBox_Album.Location = new System.Drawing.Point(3, 60);
             this.ListBox_Album.Name = "ListBox_Album";
-            this.ListBox_Album.Size = new System.Drawing.Size(211, 164);
+            this.ListBox_Album.Size = new System.Drawing.Size(142, 108);
             this.ListBox_Album.TabIndex = 57;
             // 
             // button_Events
             // 
-            this.button_Events.Location = new System.Drawing.Point(306, 34);
-            this.button_Events.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Events.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button_Events.Location = new System.Drawing.Point(204, 22);
             this.button_Events.Name = "button_Events";
-            this.button_Events.Size = new System.Drawing.Size(112, 35);
+            this.button_Events.Size = new System.Drawing.Size(151, 23);
             this.button_Events.TabIndex = 58;
             this.button_Events.Text = "View events";
             this.button_Events.UseVisualStyleBackColor = true;
@@ -75,19 +75,17 @@ namespace BasicFacebookFeatures
             // ListBox_Events
             // 
             this.ListBox_Events.FormattingEnabled = true;
-            this.ListBox_Events.ItemHeight = 20;
-            this.ListBox_Events.Location = new System.Drawing.Point(306, 92);
-            this.ListBox_Events.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ListBox_Events.Location = new System.Drawing.Point(204, 60);
             this.ListBox_Events.Name = "ListBox_Events";
-            this.ListBox_Events.Size = new System.Drawing.Size(224, 164);
+            this.ListBox_Events.Size = new System.Drawing.Size(151, 108);
             this.ListBox_Events.TabIndex = 59;
             // 
             // LikedPages
             // 
-            this.LikedPages.Location = new System.Drawing.Point(4, 319);
-            this.LikedPages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LikedPages.Location = new System.Drawing.Point(3, 199);
             this.LikedPages.Name = "LikedPages";
-            this.LikedPages.Size = new System.Drawing.Size(159, 35);
+            this.LikedPages.Size = new System.Drawing.Size(151, 31);
             this.LikedPages.TabIndex = 60;
             this.LikedPages.Text = "View Liked Pages";
             this.LikedPages.UseVisualStyleBackColor = true;
@@ -96,19 +94,17 @@ namespace BasicFacebookFeatures
             // listBoxLikedPages
             // 
             this.listBoxLikedPages.FormattingEnabled = true;
-            this.listBoxLikedPages.ItemHeight = 20;
-            this.listBoxLikedPages.Location = new System.Drawing.Point(4, 384);
-            this.listBoxLikedPages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxLikedPages.Location = new System.Drawing.Point(3, 250);
             this.listBoxLikedPages.Name = "listBoxLikedPages";
-            this.listBoxLikedPages.Size = new System.Drawing.Size(224, 164);
+            this.listBoxLikedPages.Size = new System.Drawing.Size(151, 108);
             this.listBoxLikedPages.TabIndex = 61;
             // 
             // buttonViewPosts
             // 
-            this.buttonViewPosts.Location = new System.Drawing.Point(306, 319);
-            this.buttonViewPosts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonViewPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonViewPosts.Location = new System.Drawing.Point(204, 207);
             this.buttonViewPosts.Name = "buttonViewPosts";
-            this.buttonViewPosts.Size = new System.Drawing.Size(159, 35);
+            this.buttonViewPosts.Size = new System.Drawing.Size(151, 23);
             this.buttonViewPosts.TabIndex = 68;
             this.buttonViewPosts.Text = "View posts";
             this.buttonViewPosts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -118,18 +114,17 @@ namespace BasicFacebookFeatures
             // listBoxViewPosts
             // 
             this.listBoxViewPosts.FormattingEnabled = true;
-            this.listBoxViewPosts.ItemHeight = 20;
-            this.listBoxViewPosts.Location = new System.Drawing.Point(306, 384);
-            this.listBoxViewPosts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxViewPosts.Location = new System.Drawing.Point(204, 250);
             this.listBoxViewPosts.Name = "listBoxViewPosts";
-            this.listBoxViewPosts.Size = new System.Drawing.Size(224, 164);
+            this.listBoxViewPosts.Size = new System.Drawing.Size(151, 108);
             this.listBoxViewPosts.TabIndex = 69;
             // 
             // FormBasicDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 599);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(377, 389);
             this.Controls.Add(this.listBoxViewPosts);
             this.Controls.Add(this.buttonViewPosts);
             this.Controls.Add(this.listBoxLikedPages);
@@ -138,7 +133,9 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.button_Events);
             this.Controls.Add(this.ListBox_Album);
             this.Controls.Add(this.button_Albums);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBasicDetails";
             this.Text = "Basic User Details";
             this.ResumeLayout(false);

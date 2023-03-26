@@ -45,7 +45,10 @@ namespace BasicFacebookFeatures
             InitializeComponent();
             FacebookService.s_CollectionLimit = 100;
             BackgroundImage = m_BackgroundImage;
+            AppSetting = new AppSetting();
         }
+
+        private AppSetting AppSetting { set; get; }
 
         public User LoggedInUser
         {
@@ -62,15 +65,14 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText("design.patterns20cc");
+            Clipboard.SetText("0503333424");
             m_LoginResult = FacebookService.Connect("EAADN5bDyRIYBAHkwSPl9RrDf4jG4HiGF5k05LwoHxExTNGg4LP6Fbgbc4ykFfkiKY7qxVSJiHGLe5Pfo2t8wWcqkZBL8QtbBGdWaW6ZAxbYd7G9fQHkzLzYyneebcIkOaZAIYOYt4Ud0aNeqZCKISqplgzbuWlEoPs792n11Gg33LtOsS0hkIjLyHKn0WeYZD");
 
-           // m_LoginResult = FacebookService.Login(k_AppId, sr_Paremeters);
+            //m_LoginResult = FacebookService.Login(k_AppId, sr_Paremeters);
 
             if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
             {
                 LoggedInUser = m_LoginResult.LoggedInUser;
-
                 fetchUserInfo();
             }
             else
@@ -147,6 +149,7 @@ namespace BasicFacebookFeatures
             if (LoggedInUser != null)
             {
                 MessageScheduling messageScheduling = new MessageScheduling();
+
                 try
                 {
                     messageScheduling.PostUpload += new Action<MessageScheduling>(showOnUiThatPostIsUpload);
@@ -155,7 +158,7 @@ namespace BasicFacebookFeatures
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message);
+                    MessageBox.Show(exception.Message, "Error");
                 }
             }
             else
@@ -169,7 +172,7 @@ namespace BasicFacebookFeatures
         {
             MessageBox.Show(i_MessageScheduling.UploadSuccessfully
                 ? "Post was uploaded"
-                : "Post wasn't uploaded, please try again");
+                : "Post wasn't uploaded, this information cannot currently be uploaded from Facebook servers", "Post information");
         }
 
         private void buttonMyBestFriends_Click(object sender, EventArgs e)
@@ -211,6 +214,30 @@ namespace BasicFacebookFeatures
             }
         }
 
-      
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            if (m_LoginResult != null && checkBoxRememberMe.Checked)
+            {
+                AppSetting.AccessToken = m_LoginResult.AccessToken;
+                //AppSetting.FacebookOAuthResult = m_LoginResult.FacebookOAuthResult;
+                AppSetting.saveToFile();
+            }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            AppSetting = AppSetting.LoadFromFile();
+
+            if(!string.IsNullOrEmpty(AppSetting.AccessToken))
+            {
+                m_LoginResult = FacebookService.Connect(AppSetting.AccessToken);
+                //m_LoginResult.FacebookOAuthResult = AppSetting.FacebookOAuthResult;
+                LoggedInUser = m_LoginResult.LoggedInUser;
+                fetchUserInfo();
+                buttonLogin.Text = $"Logged in as {m_LoginResult.LoggedInUser.Name}";
+            }
+        }
     }
 }

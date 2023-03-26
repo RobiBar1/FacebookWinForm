@@ -16,13 +16,13 @@ namespace BasicFacebookFeatures
     {
         private readonly FormMain r_FormMain;
         private readonly Image r_BackgroundImage = Resources.facebookDetails;
+        private const string k_TitleToMessagBox = "Message";
 
         public FormBasicDetails(FormMain i_FormMain)
         {
             r_FormMain = i_FormMain;
             InitializeComponent();
             BackgroundImage = r_BackgroundImage;
-            BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void button_Albums_Click(object sender, EventArgs e)
         {
@@ -36,11 +36,10 @@ namespace BasicFacebookFeatures
             foreach (Album album in r_FormMain.LoggedInUser.Albums)
             {
                 ListBox_Album.Items.Add(album);
-                //album.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
             if (ListBox_Album.Items.Count == 0)
             {
-                MessageBox.Show("No Albums to retrieve :(");
+                MessageBox.Show("No Albums to retrieve :(", k_TitleToMessagBox);
             }
 
         }
@@ -60,7 +59,7 @@ namespace BasicFacebookFeatures
 
             if (ListBox_Events.Items.Count == 0)
             {
-                MessageBox.Show("No Events to retrieve :(");
+                MessageBox.Show("No Events to retrieve :(", "Cannot import data");
             }
         }
         private void likedPages_Click(object sender, EventArgs e)
@@ -86,7 +85,7 @@ namespace BasicFacebookFeatures
 
             if (listBoxLikedPages.Items.Count == 0)
             {
-                MessageBox.Show("No liked pages to retrieve :(");
+                MessageBox.Show("No liked pages to retrieve :(", k_TitleToMessagBox);
             }
         }
         private void buttonViewPosts_Click(object sender, EventArgs e)
@@ -115,7 +114,7 @@ namespace BasicFacebookFeatures
 
             if (listBoxViewPosts.Items.Count == 0)
             {
-                MessageBox.Show("No Posts to retrieve :(");
+                MessageBox.Show("No Posts to retrieve :(", k_TitleToMessagBox);
             }
         }
 
