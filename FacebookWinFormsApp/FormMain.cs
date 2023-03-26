@@ -1,26 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
 using BasicFacebookFeatures.Properties;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FacebookLogic;
 
-
 namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
         private readonly Image m_BackgroundImage = Resources.facebookLikeImage;
-        private static readonly string[] sr_Paremeters = {
+        private static readonly string[] sr_Paremeters =
+        {
             "email",
             "public_profile",
             "user_age_range",
@@ -34,12 +27,15 @@ namespace BasicFacebookFeatures
             "user_location",
             "user_photos",
             "user_posts",
-            "user_videos" };
+            "user_videos",
+        };
+
         private const string k_LoginError = "First you need to be logged in";
         private const string k_LoginErrorTitle = "Not connected";
         private const string k_AppId = "226386399872134";
         private LoginResult m_LoginResult;
         private User m_LoggedInUser;
+
         public FormMain()
         {
             InitializeComponent();
@@ -48,18 +44,18 @@ namespace BasicFacebookFeatures
             AppSetting = new AppSetting();
         }
 
-        private AppSetting AppSetting { set; get; }
+        private AppSetting AppSetting { get; set; }
 
         public User LoggedInUser
         {
-            set
-            {
-                m_LoggedInUser = value;
-            }
-
             get
             {
                 return m_LoggedInUser;
+            }
+
+            set
+            {
+                m_LoggedInUser = value;
             }
         }
 
@@ -85,14 +81,12 @@ namespace BasicFacebookFeatures
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-
             if (LoggedInUser != null)
             {
                 FacebookService.LogoutWithUI();
                 buttonLogin.Text = "Login";
                 initializeBasicDetails();
             }
-
             else
             {
                 MessageBox.Show(k_LoginError, k_LoginErrorTitle);
@@ -116,6 +110,7 @@ namespace BasicFacebookFeatures
         private void fetchUserInfo()
         {
             pictureBoxProfile.LoadAsync(LoggedInUser.PictureNormalURL);
+
             if (LoggedInUser.Posts.Count > 0)
             {
                 textBoxStatus.Text = m_LoggedInUser.Posts[0].Message;
@@ -126,12 +121,12 @@ namespace BasicFacebookFeatures
             labelBirthday_Click(LoggedInUser.Birthday);
         }
 
-        private void labelLastName_Click(string i_lastName)
+        private void labelLastName_Click(string i_LastName)
         {
             labelLastName.Visible = true;
-            labelLastName.Text = i_lastName;
+            labelLastName.Text = i_LastName;
         }
-        
+
         private void labelFirstName_Click(string i_FirstName)
         {
             labelFirstName.Visible = true;
@@ -148,13 +143,12 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                MessageScheduling messageScheduling = new MessageScheduling();
+                MessageSchedulingLogic messageScheduling = new MessageSchedulingLogic();
 
                 try
                 {
-                    messageScheduling.PostUpload += new Action<MessageScheduling>(showOnUiThatPostIsUpload);
+                    messageScheduling.PostUpload += new Action<MessageSchedulingLogic>(showOnUiThatPostIsUpload);
                     messageScheduling.SchedulingMessage(LoggedInUser, userPost.Text, userHours.Text);
-
                 }
                 catch (Exception exception)
                 {
@@ -168,11 +162,9 @@ namespace BasicFacebookFeatures
 
         }
 
-        private void showOnUiThatPostIsUpload(MessageScheduling i_MessageScheduling)
+        private void showOnUiThatPostIsUpload(MessageSchedulingLogic i_MessageScheduling)
         {
-            MessageBox.Show(i_MessageScheduling.UploadSuccessfully
-                ? "Post was uploaded"
-                : "Post wasn't uploaded, this information cannot currently be uploaded from Facebook servers", "Post information");
+            MessageBox.Show(i_MessageScheduling.UploadSuccessfully ? "Post was uploaded" : "Post wasn't uploaded, this information cannot currently be uploaded from Facebook servers", "Post information");
         }
 
         private void buttonMyBestFriends_Click(object sender, EventArgs e)
@@ -181,7 +173,6 @@ namespace BasicFacebookFeatures
             {
                 new FormFriends(this).ShowDialog();
             }
-
             else
             {
                 MessageBox.Show(k_LoginError, k_LoginErrorTitle);
@@ -194,7 +185,6 @@ namespace BasicFacebookFeatures
             {
                 new FormActivityStatics(this).ShowDialog();
             }
-
             else
             {
                 MessageBox.Show(k_LoginError, k_LoginErrorTitle);
@@ -207,7 +197,6 @@ namespace BasicFacebookFeatures
             {
                 new FormBasicDetails(this).ShowDialog();
             }
-
             else
             {
                 MessageBox.Show(k_LoginError, k_LoginErrorTitle);
@@ -222,7 +211,7 @@ namespace BasicFacebookFeatures
             {
                 AppSetting.AccessToken = m_LoginResult.AccessToken;
                 //AppSetting.FacebookOAuthResult = m_LoginResult.FacebookOAuthResult;
-                AppSetting.saveToFile();
+                AppSetting.SaveToFile();
             }
         }
 

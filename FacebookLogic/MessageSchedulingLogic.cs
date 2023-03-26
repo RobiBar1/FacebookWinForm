@@ -1,53 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
-using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
-
 
 namespace FacebookLogic
 {
-    public class MessageScheduling
+    public class MessageSchedulingLogic
     {
         private string m_UserMessage;
         private string m_UserHours;
-        private int m_IntHours;
-        private User m_LoggedInUser;
-        private bool m_UploadSuccessfully;
         private System.Timers.Timer m_TimerToUploadPost = null;
-        public event Action<MessageScheduling> PostUpload;
 
-        public bool UploadSuccessfully
-        {
-            get { return m_UploadSuccessfully; }
-            set { m_UploadSuccessfully = value; }
-        }
+        public event Action<MessageSchedulingLogic> PostUpload;
 
-        private User LoggedInUser
-        {
-            set
-            {
-                m_LoggedInUser = value;
-            }
+        public bool UploadSuccessfully { get; set; }
 
-            get
-            {
-                return m_LoggedInUser;
-            }
-        }
+        private User LoggedInUser { get; set; }
+
         private string UserHours
         {
             get
             {
                 return m_UserHours;
             }
+
             set
             {
-                if (!string.IsNullOrEmpty(value) || int.TryParse(value, out int m_IntHours))
+                if (!string.IsNullOrEmpty(value) || int.TryParse(value, out int IntHours))
                 {
                     IntHours = int.Parse(value);
                 }
@@ -64,6 +42,7 @@ namespace FacebookLogic
             {
                 return m_UserMessage;
             }
+
             set
             {
                 if (!string.IsNullOrEmpty(value))
@@ -77,19 +56,19 @@ namespace FacebookLogic
             }
         }
 
-        private int IntHours
+        private int IntHours { get; set; }
+
+        private System.Timers.Timer TimerToUploadPost
         {
             get
             {
-                return m_IntHours;
+                return m_TimerToUploadPost;
             }
-            set { m_IntHours = value; }
-        }
 
-        private System.Timers.Timer TimerToUploadPost 
-        {
-            get { return m_TimerToUploadPost; }
-            set { m_TimerToUploadPost = value; }
+            set
+            {
+                m_TimerToUploadPost = value;
+            }
         }
 
         public void SchedulingMessage(User i_User, string i_Text, string i_Hours)
@@ -97,13 +76,13 @@ namespace FacebookLogic
             LoggedInUser = i_User;
             UserHours = i_Hours;
             UserMessage = i_Text;
-            TimerToUploadPost = new System.Timers.Timer(0.01);//IntHours * 60 * 1000 * 60 ); the real forumola for hours.
-            TimerToUploadPost.Elapsed += TimerElapsed;
+            TimerToUploadPost = new System.Timers.Timer(0.01);
+            TimerToUploadPost.Elapsed += timerElapsed;
             TimerToUploadPost.Enabled = true;
             TimerToUploadPost.Start();
         }
 
-        private void TimerElapsed(object sender, ElapsedEventArgs e)
+        private void timerElapsed(object sender, ElapsedEventArgs e)
         {
             try
             {
@@ -116,14 +95,14 @@ namespace FacebookLogic
                 UploadSuccessfully = false;
             }
             finally
-            { OnTimerEndPostUpload(); }
-
+            {
+                OnTimerEndPostUpload();
+            }
         }
 
         protected virtual void OnTimerEndPostUpload()
         {
             PostUpload?.Invoke(this);
         }
-
     }
 }

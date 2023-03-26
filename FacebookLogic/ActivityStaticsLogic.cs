@@ -15,55 +15,65 @@ namespace FacebookLogic
         {
             r_UserLoggedIn = i_UserLoggedIn;
         }
+
         public int MaxMonth
         {
             get
             {
                 return m_MaxMonth;
             }
+
             set
             {
                 m_MaxMonth = value;
             }
         }
+
         public int MinMonth
         {
             get
             {
                 return m_MinMonth;
             }
+
             set
             {
                 m_MinMonth = value;
             }
         }
+
         public int MinActivity
         {
             get
             {
                 return m_MinActivity;
             }
+
             set
             {
                 m_MinActivity = value;
             }
         }
+
         public int MaxActivity
         {
             get
             {
                 return m_MaxActivity;
             }
+
             set
             {
                 m_MaxActivity = value;
             }
         }
+
         public void ActivityStatics()
         {
             m_MinActivity = int.MaxValue;
             m_MaxActivity = int.MinValue;
-            int[] postsListMonths = new int[13];
+            int numberOfMonth = 12;
+            int[] postsListMonths = new int[numberOfMonth];
 
             foreach (Post post in r_UserLoggedIn.Posts)
             {
@@ -84,7 +94,6 @@ namespace FacebookLogic
                     m_MinActivity = postsListMonths[i];
                     m_MinMonth = i;
                 }
-
             }
         }
     }

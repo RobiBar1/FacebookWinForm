@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BasicFacebookFeatures.Properties;
 using FacebookWrapper.ObjectModel;
@@ -24,10 +18,12 @@ namespace BasicFacebookFeatures
             InitializeComponent();
             BackgroundImage = r_BackgroundImage;
         }
+
         private void button_Albums_Click(object sender, EventArgs e)
         {
             fetchAlbums();
         }
+
         private void fetchAlbums()
         {
             ListBox_Album.Items.Clear();
@@ -37,16 +33,19 @@ namespace BasicFacebookFeatures
             {
                 ListBox_Album.Items.Add(album);
             }
+
             if (ListBox_Album.Items.Count == 0)
             {
                 MessageBox.Show("No Albums to retrieve :(", k_TitleToMessagBox);
             }
 
         }
+
         private void button_Events_Click(object sender, EventArgs e)
         {
             fetchEvents();
         }
+
         private void fetchEvents()
         {
             ListBox_Events.Items.Clear();
@@ -62,10 +61,12 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No Events to retrieve :(", "Cannot import data");
             }
         }
+
         private void likedPages_Click(object sender, EventArgs e)
         {
             fetchLikedPages();
         }
+
         private void fetchLikedPages()
         {
             listBoxLikedPages.Items.Clear();
@@ -88,10 +89,12 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No liked pages to retrieve :(", k_TitleToMessagBox);
             }
         }
+
         private void buttonViewPosts_Click(object sender, EventArgs e)
         {
             fetchPosts();
         }
+
         private void fetchPosts()
         {
             listBoxViewPosts.Items.Clear();
@@ -117,7 +120,5 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No Posts to retrieve :(", k_TitleToMessagBox);
             }
         }
-
-      
     }
 }

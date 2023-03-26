@@ -1,37 +1,34 @@
 ﻿using FacebookWrapper.ObjectModel;
 
-
 namespace FacebookLogic
 {
     public class FriendsLogic
     {
-        private readonly User m_LoggedInUser;
-        private int m_MinLikedImage = int.MaxValue;
-        private int m_MaxLikedImage = int.MinValue;
-        private int m_AvrgLikedImage;
-        private bool m_CalcolateHasHAppned = false;
+        private readonly User r_LoggedInUser;
 
-        public FriendsLogic(User i_LoggedInUser)
+        public FriendsLogic(User i_RLoggedInUser)
         {
-            m_LoggedInUser = i_LoggedInUser;
+            r_LoggedInUser = i_RLoggedInUser;
+            AvgLikedImage = 0;
         }
+
         private bool CalculateHasHappened
-        { set; get; }
+        { get; set; } = false;
 
         public int MinLikedImage
-        { set; get; }
+        { get; set; } = int.MaxValue;
 
         public int MaxLikedImage
-        { set; get; }
+        { get; set; } = int.MinValue;
 
-        public int AvrgLikedImage
-        { set; get; }
+        public int AvgLikedImage
+        { get; set; }
 
-        private User LoggedInUser
+        private User RLoggedInUser
         {
             get
             {
-                return m_LoggedInUser;
+                return r_LoggedInUser;
             }
         }
 
@@ -39,11 +36,11 @@ namespace FacebookLogic
         {
             int imageCounter = 0;
 
-            foreach (Post post in LoggedInUser.Posts)
+            foreach (Post post in RLoggedInUser.Posts)
             {
                 if (post.Type == Post.eType.photo)
                 {
-                    if (post.LikedBy.Count <= m_MinLikedImage)
+                    if (post.LikedBy.Count <= MinLikedImage)
                     {
                         MinLikedImage = post.LikedBy.Count;
                     }
@@ -54,18 +51,16 @@ namespace FacebookLogic
                     }
 
                     imageCounter++;
-                    AvrgLikedImage += post.LikedBy.Count;
+                    AvgLikedImage += post.LikedBy.Count;
                 }
             }
 
             if (imageCounter != 0)
             {
-                AvrgLikedImage = AvrgLikedImage / imageCounter;
+                AvgLikedImage /= imageCounter;
             }
 
             CalculateHasHappened = true;
-
         }
     }
 }
-
