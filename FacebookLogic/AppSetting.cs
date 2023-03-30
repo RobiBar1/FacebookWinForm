@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Xml.Serialization;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -11,25 +12,45 @@ namespace FacebookLogic
     {
         private static readonly string sr_PathDirectoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         private static readonly string sr_FileName = @"\appSetting.xml";
+        private static AppSetting s_Appsetting;
+        private AppSetting() 
+        {
+
+        }
 
         public string AccessToken { get; set; }
-
         public Facebook.FacebookOAuthResult FacebookOAuthResult { get; set; }
+        public static AppSetting Instance
+        {
+            get
+            {
+                if (s_Appsetting == null)
+                {
+                    s_Appsetting = LoadFromFile();
+                }
+
+                return s_Appsetting;
+            }
+        }
 
         public static AppSetting LoadFromFile()
         {
-            AppSetting appSetting = new AppSetting();
+            AppSetting loadthis = null;
 
             if (File.Exists(sr_PathDirectoryName + sr_FileName))
             {
                 using (Stream stream = new FileStream(sr_PathDirectoryName + sr_FileName, FileMode.Open))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(AppSetting));
-                    appSetting = serializer.Deserialize(stream) as AppSetting;
+                    loadthis = serializer.Deserialize(stream) as AppSetting;
                 }
             }
+            else
+            {
+                loadthis = new AppSetting();
+            }
 
-            return appSetting;
+            return loadthis;
         }
 
         public void SaveToFile()
@@ -49,6 +70,14 @@ namespace FacebookLogic
                     XmlSerializer serializer = new XmlSerializer(this.GetType());
                     serializer.Serialize(stream, this);
                 }
+            }
+        }
+
+        public static void DeleteFileIfExist()
+        {
+            if(File.Exists(sr_PathDirectoryName + sr_FileName))
+            {
+                File.Delete(sr_PathDirectoryName + sr_FileName);
             }
         }
     }

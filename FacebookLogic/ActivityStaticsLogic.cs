@@ -6,74 +6,30 @@ namespace FacebookLogic
     public class ActivityStaticsLogic
     {
         private readonly User r_UserLoggedIn;
-        private int m_MaxActivity;
+        /*private int m_MaxActivity;
         private int m_MaxMonth;
         private int m_MinMonth;
-        private int m_MinActivity;
+        private int m_MinActivity;*/
 
         public ActivityStaticsLogic(User i_UserLoggedIn)
         {
             r_UserLoggedIn = i_UserLoggedIn;
         }
 
-        public int MaxMonth
-        {
-            get
-            {
-                return m_MaxMonth;
-            }
+        public int MaxMonth { get; set; }
 
-            set
-            {
-                m_MaxMonth = value;
-            }
-        }
+        public int MinMonth { get; set; }
 
-        public int MinMonth
-        {
-            get
-            {
-                return m_MinMonth;
-            }
+        public int MinActivity { get; set; }
 
-            set
-            {
-                m_MinMonth = value;
-            }
-        }
-
-        public int MinActivity
-        {
-            get
-            {
-                return m_MinActivity;
-            }
-
-            set
-            {
-                m_MinActivity = value;
-            }
-        }
-
-        public int MaxActivity
-        {
-            get
-            {
-                return m_MaxActivity;
-            }
-
-            set
-            {
-                m_MaxActivity = value;
-            }
-        }
+        public int MaxActivity { get; set; }
 
         public void ActivityStatics()
         {
-            m_MinActivity = int.MaxValue;
-            m_MaxActivity = int.MinValue;
+            MinActivity = int.MaxValue;
+            MaxActivity = int.MinValue;
             int numberOfMonth = 12;
-            int[] postsListMonths = new int[numberOfMonth];
+            int[] postsListMonths = new int[numberOfMonth + 1];
 
             foreach (Post post in r_UserLoggedIn.Posts)
             {
@@ -81,18 +37,18 @@ namespace FacebookLogic
                 postsListMonths[postUpdateTime.Month]++;
             }
 
-            for (int i = 1; i <= 12; i++)
+            for (int i = 1; i <= numberOfMonth; i++)
             {
-                if (postsListMonths[i] > m_MaxActivity)
+                if (postsListMonths[i] > MaxActivity)
                 {
-                    m_MaxActivity = postsListMonths[i];
-                    m_MaxMonth = i;
+                    MaxActivity = postsListMonths[i];
+                    MaxMonth = i;
                 }
 
-                if (postsListMonths[i] < m_MinActivity)
+                if (postsListMonths[i] < MinActivity)
                 {
-                    m_MinActivity = postsListMonths[i];
-                    m_MinMonth = i;
+                    MinActivity = postsListMonths[i];
+                    MinMonth = i;
                 }
             }
         }

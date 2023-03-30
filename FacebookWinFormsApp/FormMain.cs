@@ -35,16 +35,15 @@ namespace BasicFacebookFeatures
         private const string k_AppId = "226386399872134";
         private LoginResult m_LoginResult;
         private User m_LoggedInUser;
+        
 
         public FormMain()
         {
             InitializeComponent();
             FacebookService.s_CollectionLimit = 100;
             BackgroundImage = m_BackgroundImage;
-            AppSetting = new AppSetting();
+            UserWasClick = true;
         }
-
-        private AppSetting AppSetting { get; set; }
 
         public User LoggedInUser
         {
@@ -59,9 +58,11 @@ namespace BasicFacebookFeatures
             }
         }
 
+        private bool UserWasClick { set; get; }
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText("0503333424");
+            Clipboard.SetText("0503333424");//username: 0503333424, password: C12345678
             m_LoginResult = FacebookService.Connect("EAADN5bDyRIYBAHkwSPl9RrDf4jG4HiGF5k05LwoHxExTNGg4LP6Fbgbc4ykFfkiKY7qxVSJiHGLe5Pfo2t8wWcqkZBL8QtbBGdWaW6ZAxbYd7G9fQHkzLzYyneebcIkOaZAIYOYt4Ud0aNeqZCKISqplgzbuWlEoPs792n11Gg33LtOsS0hkIjLyHKn0WeYZD");
 
             //m_LoginResult = FacebookService.Login(k_AppId, sr_Paremeters);
@@ -143,28 +144,13 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                MessageSchedulingLogic messageScheduling = new MessageSchedulingLogic();
-
-                try
-                {
-                    messageScheduling.PostUpload += new Action<MessageSchedulingLogic>(showOnUiThatPostIsUpload);
-                    messageScheduling.SchedulingMessage(LoggedInUser, userPost.Text, userHours.Text);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message, "Error");
-                }
+                new FormPostTiming(this).ShowDialog();
             }
             else
             {
                 MessageBox.Show(k_LoginError, k_LoginErrorTitle);
             }
 
-        }
-
-        private void showOnUiThatPostIsUpload(MessageSchedulingLogic i_MessageScheduling)
-        {
-            MessageBox.Show(i_MessageScheduling.UploadSuccessfully ? "Post was uploaded" : "Post wasn't uploaded, this information cannot currently be uploaded from Facebook servers", "Post information");
         }
 
         private void buttonMyBestFriends_Click(object sender, EventArgs e)
@@ -209,23 +195,39 @@ namespace BasicFacebookFeatures
 
             if (m_LoginResult != null && checkBoxRememberMe.Checked)
             {
-                AppSetting.AccessToken = m_LoginResult.AccessToken;
-                //AppSetting.FacebookOAuthResult = m_LoginResult.FacebookOAuthResult;
-                AppSetting.SaveToFile();
+                AppSetting.Instance.AccessToken = m_LoginResult.AccessToken;
+                AppSetting.Instance.SaveToFile();
+            }
+            else if (!checkBoxRememberMe.Checked)
+            {
+                AppSetting.DeleteFileIfExist();
             }
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            AppSetting = AppSetting.LoadFromFile();
+            AppSetting.LoadFromFile();
 
-            if(!string.IsNullOrEmpty(AppSetting.AccessToken))
+            if(!string.IsNullOrEmpty(AppSetting.Instance.AccessToken))
             {
-                m_LoginResult = FacebookService.Connect(AppSetting.AccessToken);
-                //m_LoginResult.FacebookOAuthResult = AppSetting.FacebookOAuthResult;
+                m_LoginResult = FacebookService.Connect(AppSetting.Instance.AccessToken);
                 LoggedInUser = m_LoginResult.LoggedInUser;
                 fetchUserInfo();
                 buttonLogin.Text = $"Logged in as {m_LoginResult.LoggedInUser.Name}";
+            }
+        }
+
+        private void checkBoxRememberMe_CheckedChanged(object sender, EventArgs e)
+        {
+            if (m_LoginResult == null && UserWasClick)
+            {
+                UserWasClick = !UserWasClick;
+                MessageBox.Show(k_LoginError, k_LoginErrorTitle);
+                checkBoxRememberMe.Checked = false;
+            }
+            else if(m_LoginResult == null)
+            {
+                UserWasClick = !UserWasClick;
             }
         }
     }
