@@ -6,10 +6,6 @@ namespace FacebookLogic
     public class ActivityStaticsLogic
     {
         private readonly User r_UserLoggedIn;
-        /*private int m_MaxActivity;
-        private int m_MaxMonth;
-        private int m_MinMonth;
-        private int m_MinActivity;*/
 
         public ActivityStaticsLogic(User i_UserLoggedIn)
         {

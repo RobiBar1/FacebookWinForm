@@ -111,7 +111,7 @@ namespace BasicFacebookFeatures
                 }
                 else
                 {
-                    listBoxViewPosts.Items.Add(string.Format("[{0}]", post.Type));
+                    listBoxViewPosts.Items.Add($"[{post.Type}]");
                 }
             }
 

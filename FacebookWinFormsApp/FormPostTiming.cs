@@ -24,7 +24,7 @@ namespace BasicFacebookFeatures
             r_FormMain = i_FormMain;
         }
 
-        private void ButtonPost_Click(object sender, EventArgs e)
+        private void buttOnPost_Click(object sender, EventArgs e)
         {
             MessageSchedulingLogic messageScheduling = new MessageSchedulingLogic();
 

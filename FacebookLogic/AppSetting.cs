@@ -12,14 +12,17 @@ namespace FacebookLogic
     {
         private static readonly string sr_PathDirectoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         private static readonly string sr_FileName = @"\appSetting.xml";
+        private static readonly string sr_PathDirectoryAndFileName = sr_PathDirectoryName + sr_FileName;
         private static AppSetting s_Appsetting;
-        private AppSetting() 
-        {
 
+        private AppSetting()
+        {
         }
 
         public string AccessToken { get; set; }
+
         public Facebook.FacebookOAuthResult FacebookOAuthResult { get; set; }
+
         public static AppSetting Instance
         {
             get
@@ -37,9 +40,9 @@ namespace FacebookLogic
         {
             AppSetting loadthis = null;
 
-            if (File.Exists(sr_PathDirectoryName + sr_FileName))
+            if (File.Exists(sr_PathDirectoryAndFileName))
             {
-                using (Stream stream = new FileStream(sr_PathDirectoryName + sr_FileName, FileMode.Open))
+                using (Stream stream = new FileStream(sr_PathDirectoryAndFileName, FileMode.Open))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(AppSetting));
                     loadthis = serializer.Deserialize(stream) as AppSetting;
@@ -55,9 +58,9 @@ namespace FacebookLogic
 
         public void SaveToFile()
         {
-            if (File.Exists(sr_PathDirectoryName + sr_FileName))
+            if (File.Exists(sr_PathDirectoryAndFileName))
             {
-                using (Stream stream = new FileStream(sr_PathDirectoryName + sr_FileName, FileMode.Truncate))
+                using (Stream stream = new FileStream(sr_PathDirectoryAndFileName, FileMode.Truncate))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(AppSetting));
                     serializer.Serialize(stream, this);
@@ -65,7 +68,7 @@ namespace FacebookLogic
             }
             else
             {
-                using (Stream stream = new FileStream(sr_PathDirectoryName + sr_FileName, FileMode.CreateNew))
+                using (Stream stream = new FileStream(sr_PathDirectoryAndFileName, FileMode.CreateNew))
                 {
                     XmlSerializer serializer = new XmlSerializer(this.GetType());
                     serializer.Serialize(stream, this);
@@ -75,9 +78,9 @@ namespace FacebookLogic
 
         public static void DeleteFileIfExist()
         {
-            if(File.Exists(sr_PathDirectoryName + sr_FileName))
+            if (File.Exists(sr_PathDirectoryAndFileName))
             {
-                File.Delete(sr_PathDirectoryName + sr_FileName);
+                File.Delete(sr_PathDirectoryAndFileName);
             }
         }
     }

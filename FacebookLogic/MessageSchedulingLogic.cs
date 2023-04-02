@@ -14,9 +14,9 @@ namespace FacebookLogic
 
         public bool UploadSuccessfully { get; set; }
 
-        private User LoggedInUser { get; set; }
+        private User loggedInUser { get; set; }
 
-        private string UserHours
+        private string userHours
         {
             get
             {
@@ -25,9 +25,9 @@ namespace FacebookLogic
 
             set
             {
-                if (!string.IsNullOrEmpty(value) || int.TryParse(value, out int IntHours))
+                if (!string.IsNullOrEmpty(value) || int.TryParse(value, out int o_IntValue))
                 {
-                    IntHours = int.Parse(value);
+                    intHours = int.Parse(value);
                 }
                 else
                 {
@@ -36,7 +36,7 @@ namespace FacebookLogic
             }
         }
 
-        private string UserMessage
+        private string userMessage
         {
             get
             {
@@ -56,9 +56,9 @@ namespace FacebookLogic
             }
         }
 
-        private int IntHours { get; set; }
+        private int intHours { get; set; }
 
-        private System.Timers.Timer TimerToUploadPost
+        private System.Timers.Timer timerToUploadPost
         {
             get
             {
@@ -73,21 +73,21 @@ namespace FacebookLogic
 
         public void SchedulingMessage(User i_User, string i_Text, string i_Hours)
         {
-            LoggedInUser = i_User;
-            UserHours = i_Hours;
-            UserMessage = i_Text;
-            TimerToUploadPost = new System.Timers.Timer(0.01);
-            TimerToUploadPost.Elapsed += timerElapsed;
-            TimerToUploadPost.Enabled = true;
-            TimerToUploadPost.Start();
+            loggedInUser = i_User;
+            userHours = i_Hours;
+            userMessage = i_Text;
+            timerToUploadPost = new System.Timers.Timer(0.01);
+            timerToUploadPost.Elapsed += timerElapsed;
+            timerToUploadPost.Enabled = true;
+            timerToUploadPost.Start();
         }
 
         private void timerElapsed(object sender, ElapsedEventArgs e)
         {
             try
             {
-                TimerToUploadPost.Stop();
-                Status postStatus = LoggedInUser.PostStatus(UserMessage);
+                timerToUploadPost.Stop();
+                Status postStatus = loggedInUser.PostStatus(userMessage);
                 UploadSuccessfully = true;
             }
             catch (Exception ex)

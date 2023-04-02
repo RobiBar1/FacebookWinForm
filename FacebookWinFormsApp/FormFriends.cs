@@ -22,15 +22,12 @@ namespace BasicFacebookFeatures
             BackgroundImage = r_BackgroundImage;
         }
 
-        private FriendsLogic Logic
-        { set; get; }
-
         private void buttonFavoritePhoto_Click(object sender, EventArgs e)
         {
             try
             {
                 r_Logic.CalculateMinMaxAvgLikes();
-                MessageBox.Show(string.Format("Your max likes on a picture is : {0}", Logic.MaxLikedImage),"Most popular picture");
+                MessageBox.Show($"Your max likes on a picture is : {r_Logic.MaxLikedImage}", "Most popular picture");
             }
             catch (Exception exception)
             {
@@ -43,7 +40,7 @@ namespace BasicFacebookFeatures
             try
             {
                 r_Logic.CalculateMinMaxAvgLikes();
-                MessageBox.Show(String.Format("Your minimum likes on a picture is: {0}", Logic.MinLikedImage), "Least popular picture");
+                MessageBox.Show($"Your minimum likes on a picture is: {r_Logic.MinLikedImage}", "Least popular picture");
             }
             catch (Exception exception)
             {
@@ -56,7 +53,7 @@ namespace BasicFacebookFeatures
             try
             {
                 r_Logic.CalculateMinMaxAvgLikes();
-                MessageBox.Show(string.Format("Your average likes on a picture is: {0}", Logic.AvgLikedImage), "Average picture");
+                MessageBox.Show($"Your average likes on a picture is: {r_Logic.AvgLikedImage}", "Average picture");
             }
             catch (Exception exception)
             {

@@ -83,7 +83,7 @@
             this.ButtonPost.Text = "Submit your post";
             this.ButtonPost.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ButtonPost.UseVisualStyleBackColor = true;
-            this.ButtonPost.Click += new System.EventHandler(this.ButtonPost_Click);
+            this.ButtonPost.Click += new System.EventHandler(this.buttOnPost_Click);
             // 
             // FormPostTiming
             // 

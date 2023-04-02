@@ -11,7 +11,7 @@ namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
-        private readonly Image m_BackgroundImage = Resources.facebookLikeImage;
+        private readonly Image r_BackgroundImage = Resources.facebookLikeImage;
         private static readonly string[] sr_Paremeters =
         {
             "email",
@@ -35,14 +35,13 @@ namespace BasicFacebookFeatures
         private const string k_AppId = "226386399872134";
         private LoginResult m_LoginResult;
         private User m_LoggedInUser;
-        
 
         public FormMain()
         {
             InitializeComponent();
             FacebookService.s_CollectionLimit = 100;
-            BackgroundImage = m_BackgroundImage;
-            UserWasClick = true;
+            BackgroundImage = r_BackgroundImage;
+            userWasClick = true;
         }
 
         public User LoggedInUser
@@ -58,14 +57,13 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private bool UserWasClick { set; get; }
+        private bool userWasClick { set; get; }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText("0503333424");//username: 0503333424, password: C12345678
-            m_LoginResult = FacebookService.Connect("EAADN5bDyRIYBAHkwSPl9RrDf4jG4HiGF5k05LwoHxExTNGg4LP6Fbgbc4ykFfkiKY7qxVSJiHGLe5Pfo2t8wWcqkZBL8QtbBGdWaW6ZAxbYd7G9fQHkzLzYyneebcIkOaZAIYOYt4Ud0aNeqZCKISqplgzbuWlEoPs792n11Gg33LtOsS0hkIjLyHKn0WeYZD");
+            Clipboard.SetText("design.patterns.22aa");
 
-            //m_LoginResult = FacebookService.Login(k_AppId, sr_Paremeters);
+            m_LoginResult = FacebookService.Login(k_AppId, sr_Paremeters);
 
             if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
             {
@@ -77,7 +75,10 @@ namespace BasicFacebookFeatures
                 MessageBox.Show(m_LoginResult.ErrorMessage, "Login Failed");
             }
 
-            buttonLogin.Text = $"Logged in as {m_LoginResult.LoggedInUser.Name}";
+            if (m_LoginResult.AccessToken != null)
+            {
+                buttonLogin.Text = $"Logged in as {m_LoginResult.LoggedInUser.Name}";
+            }
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -98,7 +99,6 @@ namespace BasicFacebookFeatures
         {
             LoggedInUser = null;
             m_LoginResult = null;
-
             labelLastName.Visible = false;
             labelLastName.Text = string.Empty;
             labelFirstName.Visible = false;
@@ -155,7 +155,7 @@ namespace BasicFacebookFeatures
 
         private void buttonMyBestFriends_Click(object sender, EventArgs e)
         {
-            if(LoggedInUser != null)
+            if (LoggedInUser != null)
             {
                 new FormFriends(this).ShowDialog();
             }
@@ -208,7 +208,7 @@ namespace BasicFacebookFeatures
         {
             AppSetting.LoadFromFile();
 
-            if(!string.IsNullOrEmpty(AppSetting.Instance.AccessToken))
+            if (!string.IsNullOrEmpty(AppSetting.Instance.AccessToken))
             {
                 m_LoginResult = FacebookService.Connect(AppSetting.Instance.AccessToken);
                 LoggedInUser = m_LoginResult.LoggedInUser;
@@ -219,15 +219,15 @@ namespace BasicFacebookFeatures
 
         private void checkBoxRememberMe_CheckedChanged(object sender, EventArgs e)
         {
-            if (m_LoginResult == null && UserWasClick)
+            if (m_LoginResult == null && userWasClick)
             {
-                UserWasClick = !UserWasClick;
+                userWasClick = !userWasClick;
                 MessageBox.Show(k_LoginError, k_LoginErrorTitle);
                 checkBoxRememberMe.Checked = false;
             }
-            else if(m_LoginResult == null)
+            else if (m_LoginResult == null)
             {
-                UserWasClick = !UserWasClick;
+                userWasClick = !userWasClick;
             }
         }
     }

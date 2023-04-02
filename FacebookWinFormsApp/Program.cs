@@ -12,8 +12,6 @@ namespace BasicFacebookFeatures
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-
-
         public static void Main()
         {
             FacebookService.s_UseForamttedToStrings = true;

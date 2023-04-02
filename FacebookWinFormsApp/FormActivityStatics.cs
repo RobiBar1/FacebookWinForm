@@ -10,26 +10,27 @@ namespace BasicFacebookFeatures
     {
         private readonly Image r_BackgroundImage = Resources.statisticFacebook;
         private readonly FormMain r_FormMain;
-        private readonly ActivityStaticsLogic r_activityStaticsLogic;
+        private readonly ActivityStaticsLogic r_ActivityStaticsLogic;
+        private const string k_Title = "Error";
 
         public FormActivityStatics(FormMain i_FormMain)
         {
             InitializeComponent();
             r_FormMain = i_FormMain;
-            r_activityStaticsLogic = new ActivityStaticsLogic(r_FormMain.LoggedInUser);
+            r_ActivityStaticsLogic = new ActivityStaticsLogic(r_FormMain.LoggedInUser);
             BackgroundImage = r_BackgroundImage;
         }
 
         private void buttonMaximumActivity_Click(object sender, EventArgs e)
-        { 
+        {
             try
             {
-                r_activityStaticsLogic.ActivityStatics();
-                MessageBox.Show($"The maximum number of photos you have uploaded to Facebook is: {r_activityStaticsLogic.MaxActivity} in month {r_activityStaticsLogic.MaxMonth}", "Maximum activity");
+                r_ActivityStaticsLogic.ActivityStatics();
+                MessageBox.Show($"The maximum number of photos you have uploaded to Facebook is: {r_ActivityStaticsLogic.MaxActivity} in month {r_ActivityStaticsLogic.MaxMonth}", "Maximum activity");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, k_Title);
             }
         }
 
@@ -37,12 +38,12 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                r_activityStaticsLogic.ActivityStatics();
-                MessageBox.Show($"The minimum number of photos you have uploaded to Facebook is: {r_activityStaticsLogic.MinActivity} in month {r_activityStaticsLogic.MinMonth}", "Minimum activity");
+                r_ActivityStaticsLogic.ActivityStatics();
+                MessageBox.Show($"The minimum number of photos you have uploaded to Facebook is: {r_ActivityStaticsLogic.MinActivity} in month {r_ActivityStaticsLogic.MinMonth}", "Minimum activity");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, k_Title);
             }
         }
     }
