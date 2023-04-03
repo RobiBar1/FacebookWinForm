@@ -11,7 +11,7 @@ namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
-        private const string k_LoginError = "First you need to be logged in";
+        private const string k_LoginError = "First you need to be logged in!";
         private const string k_LoginErrorTitle = "Not connected";
         private const string k_AppId = "226386399872134";
         private static readonly string[] sr_Paremeters =

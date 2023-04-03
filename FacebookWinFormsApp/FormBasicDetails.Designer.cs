@@ -44,7 +44,7 @@ namespace BasicFacebookFeatures
             // 
             // button_Albums
             // 
-            this.button_Albums.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button_Albums.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.button_Albums.Location = new System.Drawing.Point(4, 34);
             this.button_Albums.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Albums.Name = "button_Albums";
@@ -66,7 +66,7 @@ namespace BasicFacebookFeatures
             // 
             // button_Events
             // 
-            this.button_Events.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button_Events.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.button_Events.Location = new System.Drawing.Point(306, 34);
             this.button_Events.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_Events.Name = "button_Events";
@@ -88,11 +88,11 @@ namespace BasicFacebookFeatures
             // 
             // LikedPages
             // 
-            this.LikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.LikedPages.Location = new System.Drawing.Point(4, 306);
             this.LikedPages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LikedPages.Name = "LikedPages";
-            this.LikedPages.Size = new System.Drawing.Size(226, 48);
+            this.LikedPages.Size = new System.Drawing.Size(211, 47);
             this.LikedPages.TabIndex = 60;
             this.LikedPages.Text = "View Liked Pages";
             this.LikedPages.UseVisualStyleBackColor = true;
@@ -105,12 +105,12 @@ namespace BasicFacebookFeatures
             this.listBoxLikedPages.Location = new System.Drawing.Point(4, 385);
             this.listBoxLikedPages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBoxLikedPages.Name = "listBoxLikedPages";
-            this.listBoxLikedPages.Size = new System.Drawing.Size(224, 164);
+            this.listBoxLikedPages.Size = new System.Drawing.Size(213, 164);
             this.listBoxLikedPages.TabIndex = 61;
             // 
             // buttonViewPosts
             // 
-            this.buttonViewPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.buttonViewPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.buttonViewPosts.Location = new System.Drawing.Point(306, 318);
             this.buttonViewPosts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonViewPosts.Name = "buttonViewPosts";
