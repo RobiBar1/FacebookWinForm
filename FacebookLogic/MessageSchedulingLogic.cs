@@ -87,7 +87,7 @@ namespace FacebookLogic
             try
             {
                 timerToUploadPost.Stop();
-                Status postStatus = loggedInUser.PostStatus(userMessage);
+                loggedInUser.PostStatus(userMessage);
                 UploadSuccessfully = true;
             }
             catch (Exception ex)

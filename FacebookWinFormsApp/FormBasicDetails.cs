@@ -8,9 +8,9 @@ namespace BasicFacebookFeatures
 {
     public partial class FormBasicDetails : Form
     {
+        private const string k_TitleToMessagBox = "Message";
         private readonly FormMain r_FormMain;
         private readonly Image r_BackgroundImage = Resources.facebookDetails;
-        private const string k_TitleToMessagBox = "Message";
 
         public FormBasicDetails(FormMain i_FormMain)
         {
@@ -38,7 +38,6 @@ namespace BasicFacebookFeatures
             {
                 MessageBox.Show("No Albums to retrieve :(", k_TitleToMessagBox);
             }
-
         }
 
         private void button_Events_Click(object sender, EventArgs e)

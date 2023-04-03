@@ -8,10 +8,10 @@ namespace BasicFacebookFeatures
 {
     public partial class FormActivityStatics : Form
     {
+        private const string k_Title = "Error";
         private readonly Image r_BackgroundImage = Resources.statisticFacebook;
         private readonly FormMain r_FormMain;
         private readonly ActivityStaticsLogic r_ActivityStaticsLogic;
-        private const string k_Title = "Error";
 
         public FormActivityStatics(FormMain i_FormMain)
         {

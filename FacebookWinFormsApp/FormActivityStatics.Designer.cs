@@ -39,10 +39,9 @@ namespace BasicFacebookFeatures
             // buttonMaximumActivity
             // 
             this.buttonMaximumActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonMaximumActivity.Location = new System.Drawing.Point(8, 25);
-            this.buttonMaximumActivity.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMaximumActivity.Location = new System.Drawing.Point(271, 38);
             this.buttonMaximumActivity.Name = "buttonMaximumActivity";
-            this.buttonMaximumActivity.Size = new System.Drawing.Size(117, 56);
+            this.buttonMaximumActivity.Size = new System.Drawing.Size(176, 86);
             this.buttonMaximumActivity.TabIndex = 0;
             this.buttonMaximumActivity.Text = "Maximum Activity";
             this.buttonMaximumActivity.UseVisualStyleBackColor = true;
@@ -51,10 +50,9 @@ namespace BasicFacebookFeatures
             // buttonMinimalActivity
             // 
             this.buttonMinimalActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonMinimalActivity.Location = new System.Drawing.Point(8, 144);
-            this.buttonMinimalActivity.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMinimalActivity.Location = new System.Drawing.Point(271, 209);
             this.buttonMinimalActivity.Name = "buttonMinimalActivity";
-            this.buttonMinimalActivity.Size = new System.Drawing.Size(117, 56);
+            this.buttonMinimalActivity.Size = new System.Drawing.Size(176, 86);
             this.buttonMinimalActivity.TabIndex = 1;
             this.buttonMinimalActivity.Text = "Minimal Activity";
             this.buttonMinimalActivity.UseVisualStyleBackColor = true;
@@ -62,15 +60,13 @@ namespace BasicFacebookFeatures
             // 
             // FormActivityStatics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(482, 292);
+            this.ClientSize = new System.Drawing.Size(723, 449);
             this.Controls.Add(this.buttonMinimalActivity);
             this.Controls.Add(this.buttonMaximumActivity);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormActivityStatics";
             this.Text = "User Activity Statics";
             this.ResumeLayout(false);

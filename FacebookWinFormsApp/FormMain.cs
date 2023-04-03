@@ -11,7 +11,9 @@ namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
-        private readonly Image r_BackgroundImage = Resources.facebookLikeImage;
+        private const string k_LoginError = "First you need to be logged in";
+        private const string k_LoginErrorTitle = "Not connected";
+        private const string k_AppId = "226386399872134";
         private static readonly string[] sr_Paremeters =
         {
             "email",
@@ -30,9 +32,7 @@ namespace BasicFacebookFeatures
             "user_videos",
         };
 
-        private const string k_LoginError = "First you need to be logged in";
-        private const string k_LoginErrorTitle = "Not connected";
-        private const string k_AppId = "226386399872134";
+        private readonly Image r_BackgroundImage = Resources.facebookLikeImage;
         private LoginResult m_LoginResult;
         private User m_LoggedInUser;
 
@@ -57,7 +57,7 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private bool userWasClick { set; get; }
+        private bool userWasClick { get; set; }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -150,7 +150,6 @@ namespace BasicFacebookFeatures
             {
                 MessageBox.Show(k_LoginError, k_LoginErrorTitle);
             }
-
         }
 
         private void buttonMyBestFriends_Click(object sender, EventArgs e)

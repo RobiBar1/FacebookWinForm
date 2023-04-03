@@ -5,7 +5,6 @@ namespace FacebookLogic
     public class FriendsLogic
     {
         private readonly User r_LoggedInUser;
-
         public FriendsLogic(User i_RLoggedInUser)
         {
             r_LoggedInUser = i_RLoggedInUser;

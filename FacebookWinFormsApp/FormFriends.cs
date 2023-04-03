@@ -8,16 +8,16 @@ namespace BasicFacebookFeatures
 {
     public partial class FormFriends : Form
     {
+        private const string k_ErrorMessageTitle = "Cannot import data";
+        private const string k_ErrorMessage = "This information cannot currently be uploaded from Facebook servers";
         private readonly FormMain r_FormMain;
         private readonly FriendsLogic r_Logic;
         private readonly Image r_BackgroundImage = Resources.facebookFriends;
-        private const string k_ErrorMessageTitle = "Cannot import data";
-        private const string k_ErrorMessage = "This information cannot currently be uploaded from Facebook servers";
 
         public FormFriends(FormMain i_FormMain)
         {
             r_FormMain = i_FormMain;
-            r_Logic = new FriendsLogic(i_FormMain.LoggedInUser);
+            r_Logic = new FriendsLogic(r_FormMain.LoggedInUser);
             InitializeComponent();
             BackgroundImage = r_BackgroundImage;
         }
