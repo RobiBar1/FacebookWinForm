@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace BasicFacebookFeatures
+{
+    public class FormFactory
+    {
+        public static Form CreateForm(eFormType i_FormType, FormMain i_FormMain)
+        {
+            Form form = null;
+
+            switch (i_FormType)
+            {
+                case eFormType.FormFriends:
+                    form = new FormFriends(i_FormMain);
+                    break;
+                case eFormType.FormBasicDetails:
+                    form = new FormBasicDetails(i_FormMain);
+                    break;
+                case eFormType.FormActivityStatics:
+                    form = new FormActivityStatics(i_FormMain);
+                    break;
+            }
+
+            return form;
+        }
+    }
+}

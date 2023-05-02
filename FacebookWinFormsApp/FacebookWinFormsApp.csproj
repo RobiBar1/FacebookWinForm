@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="eFormType.cs" />
     <Compile Include="FormActivityStatics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +106,7 @@
     <Compile Include="FormBasicDetails.Designer.cs">
       <DependentUpon>FormBasicDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFactory.cs" />
     <Compile Include="FormFriends.cs">
       <SubType>Form</SubType>
     </Compile>

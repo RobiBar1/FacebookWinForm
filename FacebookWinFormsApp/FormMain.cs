@@ -156,7 +156,7 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                new FormFriends(this).ShowDialog();
+                FormFactory.CreateForm(eFormType.FormFriends, this).ShowDialog();
             }
             else
             {
@@ -168,7 +168,8 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                new FormActivityStatics(this).ShowDialog();
+                FormFactory.CreateForm(eFormType.FormActivityStatics, this).ShowDialog();
+
             }
             else
             {
@@ -180,7 +181,8 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                new FormBasicDetails(this).ShowDialog();
+                FormFactory.CreateForm(eFormType.FormBasicDetails, this).ShowDialog();
+
             }
             else
             {
