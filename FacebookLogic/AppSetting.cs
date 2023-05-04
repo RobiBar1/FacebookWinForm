@@ -77,6 +77,5 @@ namespace FacebookLogic
         }
 
         public string AccessToken { get; set; }
-
     }
 }

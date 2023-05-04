@@ -16,6 +16,7 @@ namespace BasicFacebookFeatures
             InitializeComponent();
             BackgroundImage = r_BackgroundImage;
             r_FormMain = i_FormMain;
+            LogicManager.CreateManager(r_FormMain.LoggedInUser);
         }
 
         private void buttOnPost_Click(object sender, EventArgs e)
@@ -24,7 +25,11 @@ namespace BasicFacebookFeatures
 
             try
             {
-                messageScheduling.PostUpload += new Action<MessageSchedulingLogic>(showOnUiThatPostIsUpload);
+                //messageScheduling.PostUpload += new Action<MessageSchedulingLogic>(showOnUiThatPostIsUpload);
+                
+                LogicManager.Instance.PostUpload += new Action<bool>(showOnUiThatPostIsUpload);
+                
+                
                 messageScheduling.SchedulingMessage(r_FormMain.LoggedInUser, userPost.Text, userHours.Text);
             }
             catch (Exception exception)
@@ -33,9 +38,14 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void showOnUiThatPostIsUpload(MessageSchedulingLogic i_MessageScheduling)
+        private void showOnUiThatPostIsUpload(bool i_UploadSuccessfully)
+        {
+
+        }
+
+       /* private void showOnUiThatPostIsUpload(MessageSchedulingLogic i_MessageScheduling)
         {
             MessageBox.Show(i_MessageScheduling.UploadSuccessfully ? "Post was uploaded" : "Post wasn't uploaded, this information cannot currently be uploaded from Facebook servers", "Post information");
-        }
+        }*/
     }
 }

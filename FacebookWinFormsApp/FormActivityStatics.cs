@@ -11,13 +11,12 @@ namespace BasicFacebookFeatures
         private const string k_Title = "Error";
         private readonly Image r_BackgroundImage = Resources.statisticFacebook;
         private readonly FormMain r_FormMain;
-        private readonly ActivityStaticsLogic r_ActivityStaticsLogic;
 
         public FormActivityStatics(FormMain i_FormMain)
         {
             InitializeComponent();
             r_FormMain = i_FormMain;
-            r_ActivityStaticsLogic = new ActivityStaticsLogic(r_FormMain.LoggedInUser);
+            LogicManager.CreateManager(r_FormMain.LoggedInUser);
             BackgroundImage = r_BackgroundImage;
         }
 
@@ -25,8 +24,7 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                r_ActivityStaticsLogic.ActivityStatics();
-                MessageBox.Show($"The maximum number of photos you have uploaded to Facebook is: {r_ActivityStaticsLogic.MaxActivity} in month {r_ActivityStaticsLogic.MaxMonth}", "Maximum activity");
+                MessageBox.Show($"The maximum number of photos you have uploaded to Facebook is: {LogicManager.Instance.GetMaxActivity()} in month {LogicManager.Instance.GetMaxMonth()}", "Maximum activity");
             }
             catch (Exception ex)
             {
@@ -38,8 +36,7 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                r_ActivityStaticsLogic.ActivityStatics();
-                MessageBox.Show($"The minimum number of photos you have uploaded to Facebook is: {r_ActivityStaticsLogic.MinActivity} in month {r_ActivityStaticsLogic.MinMonth}", "Minimum activity");
+                MessageBox.Show($"The minimum number of photos you have uploaded to Facebook is: {LogicManager.Instance.GetMinActivity()} in month {LogicManager.Instance.GetMinMonth()}", "Minimum activity");
             }
             catch (Exception ex)
             {

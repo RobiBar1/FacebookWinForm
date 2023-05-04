@@ -44,6 +44,7 @@
     <Compile Include="ActivityStaticsLogic.cs" />
     <Compile Include="AppSetting.cs" />
     <Compile Include="FriendsLogic.cs" />
+    <Compile Include="LogicManager.cs" />
     <Compile Include="MessageSchedulingLogic.cs" />
   </ItemGroup>
   <ItemGroup>
