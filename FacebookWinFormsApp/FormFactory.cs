@@ -11,22 +11,22 @@ namespace BasicFacebookFeatures
     {
         public static Form CreateForm(eFormType i_FormType, FormMain i_FormMain)
         {
-            Form form = null;
+            Form userFormChoice = null;
 
             switch (i_FormType)
             {
                 case eFormType.FormFriends:
-                    form = new FormFriends(i_FormMain);
+                    userFormChoice = new FormFriends(i_FormMain);
                     break;
                 case eFormType.FormBasicDetails:
-                    form = new FormBasicDetails(i_FormMain);
+                    userFormChoice = new FormBasicDetails(i_FormMain);
                     break;
                 case eFormType.FormActivityStatics:
-                    form = new FormActivityStatics(i_FormMain);
+                    userFormChoice = new FormActivityStatics(i_FormMain);
                     break;
             }
 
-            return form;
+            return userFormChoice;
         }
     }
 }

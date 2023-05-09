@@ -12,8 +12,9 @@ namespace FacebookLogic
         private readonly ActivityStaticsLogic r_ActivityStaticsLogic;
         private readonly FriendsLogic r_FriendsLogic;
         private readonly MessageSchedulingLogic r_MessageSchedulingLogic;
+        private static readonly object sr_LockObj = new object();
         private static LogicManager s_LogicMenager;
-        private static User s_User = null;
+        private static User s_User;
         private bool m_ActivityStaticsCalculate = false;
 
         public event Action<bool> PostUpload;
@@ -29,9 +30,12 @@ namespace FacebookLogic
         {
             get
             {
-                if (s_LogicMenager == null)
+                lock (sr_LockObj)
                 {
-                    s_LogicMenager = new LogicManager(s_User);
+                    if (s_LogicMenager == null)
+                    {
+                        s_LogicMenager = new LogicManager(s_User);
+                    }
                 }
 
                 return s_LogicMenager;
@@ -112,12 +116,12 @@ namespace FacebookLogic
         /*protected virtual void OnPostUpload()
         {
             PostUpload?.Invoke(this);
-        }*/
+        }
 
         protected virtual void dsd()
         {
             PostUpload?.Invoke(r_MessageSchedulingLogic.UploadSuccessfully);
-        }
+        }*/
 
         #endregion MessageSchedulingLogic
         private LogicManager(User i_User)
