@@ -24,6 +24,9 @@ namespace BasicFacebookFeatures
                 case eFormType.FormActivityStatics:
                     userFormChoice = new FormActivityStatics(i_FormMain);
                     break;
+                case eFormType.FormPostTime:
+                    userFormChoice = new FormPostTiming(i_FormMain);
+                    break;
             }
 
             return userFormChoice;

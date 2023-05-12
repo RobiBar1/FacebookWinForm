@@ -12,16 +12,19 @@ namespace FacebookLogic
             r_UserLoggedIn = i_UserLoggedIn;
         }
 
-        public int MaxMonth { get; set; }
+        public int MaxMonth { get; private set; }
 
-        public int MinMonth { get; set; }
+        public int MinMonth { get; private set; }
 
-        public int MinActivity { get; set; }
+        public int MinActivity { get; private set; }
 
-        public int MaxActivity { get; set; }
+        public int MaxActivity { get; private set; }
+
+        public bool isCalculated { get; private set; }
 
         public void ActivityStatics()
         {
+            isCalculated = true;
             MinActivity = int.MaxValue;
             MaxActivity = int.MinValue;
             int numberOfMonth = 12;

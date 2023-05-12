@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +12,9 @@ namespace FacebookLogic
     {
         private readonly ActivityStaticsLogic r_ActivityStaticsLogic;
         private readonly FriendsLogic r_FriendsLogic;
-        private readonly MessageSchedulingLogic r_MessageSchedulingLogic;
         private static readonly object sr_LockObj = new object();
         private static LogicManager s_LogicMenager;
         private static User s_User;
-        private bool m_ActivityStaticsCalculate = false;
-
-        public event Action<bool> PostUpload;
 
         public static LogicManager CreateManager(User i_User)
         {
@@ -71,64 +68,45 @@ namespace FacebookLogic
 
         public int GetMaxActivity()
         {
-            if (!m_ActivityStaticsCalculate)
-            {
-                r_ActivityStaticsLogic.ActivityStatics(); 
-            }
+            checkIfCalculated();
 
             return r_ActivityStaticsLogic.MaxActivity;
         }
 
         public int GetMaxMonth()
         {
-            if (!m_ActivityStaticsCalculate)
-            {
-                r_ActivityStaticsLogic.ActivityStatics();
-            }
+            checkIfCalculated();
 
             return r_ActivityStaticsLogic.MaxMonth;
         }
 
         public int GetMinActivity()
         {
-            if (!m_ActivityStaticsCalculate)
-            {
-                r_ActivityStaticsLogic.ActivityStatics();
-            }
+            checkIfCalculated();
 
             return r_ActivityStaticsLogic.MinActivity;
         }
 
-        public int GetMinMonth()
+        private void checkIfCalculated()
         {
-            if (!m_ActivityStaticsCalculate)
+            if (!r_ActivityStaticsLogic.isCalculated)
             {
                 r_ActivityStaticsLogic.ActivityStatics();
             }
+        }
+
+        public int GetMinMonth()
+        {
+            checkIfCalculated();
 
             return r_ActivityStaticsLogic.MinMonth;
         }
 
         #endregion ActivityStaticsLogic
-
-        #region MessageSchedulingLogic
-
-        /*protected virtual void OnPostUpload()
-        {
-            PostUpload?.Invoke(this);
-        }
-
-        protected virtual void dsd()
-        {
-            PostUpload?.Invoke(r_MessageSchedulingLogic.UploadSuccessfully);
-        }*/
-
-        #endregion MessageSchedulingLogic
         private LogicManager(User i_User)
         {
             r_ActivityStaticsLogic = new ActivityStaticsLogic(i_User);
             r_FriendsLogic = new FriendsLogic(i_User);
-            r_MessageSchedulingLogic = new MessageSchedulingLogic();
         }
     }
 }

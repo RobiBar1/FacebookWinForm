@@ -11,5 +11,6 @@ namespace BasicFacebookFeatures
         FormFriends,
         FormActivityStatics,
         FormBasicDetails,
+        FormPostTime,
     }
 }

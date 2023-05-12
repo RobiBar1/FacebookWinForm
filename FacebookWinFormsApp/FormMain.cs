@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using BasicFacebookFeatures.Properties;
 using FacebookWrapper.ObjectModel;
@@ -144,7 +145,7 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                new FormPostTiming(this).ShowDialog();
+                new Thread(() => FormFactory.CreateForm(eFormType.FormPostTime, this).ShowDialog()).Start();
             }
             else
             {
@@ -156,7 +157,7 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                FormFactory.CreateForm(eFormType.FormFriends, this).ShowDialog();
+                new Thread(() => FormFactory.CreateForm(eFormType.FormFriends, this).ShowDialog()).Start();
             }
             else
             {
@@ -168,8 +169,7 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                FormFactory.CreateForm(eFormType.FormActivityStatics, this).ShowDialog();
-
+                new Thread(() => FormFactory.CreateForm(eFormType.FormActivityStatics, this).ShowDialog()).Start();
             }
             else
             {
@@ -181,8 +181,7 @@ namespace BasicFacebookFeatures
         {
             if (LoggedInUser != null)
             {
-                FormFactory.CreateForm(eFormType.FormBasicDetails, this).ShowDialog();
-
+                new Thread(() => FormFactory.CreateForm(eFormType.FormBasicDetails, this).ShowDialog()).Start();
             }
             else
             {
