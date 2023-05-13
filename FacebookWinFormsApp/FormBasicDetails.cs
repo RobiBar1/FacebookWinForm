@@ -101,48 +101,21 @@ namespace BasicFacebookFeatures
 
         private void fetchPosts()
         {
-            /*
-            listBoxViewPosts.Invoke(new Action(() => listBoxViewPosts.Items.Clear()));
-
-            listBoxViewPosts.Invoke(new Action(() => listBoxViewPosts.DisplayMember = "Name"));
-
-
-            foreach (Post post in r_FormMain.LoggedInUser.Posts)
-            {
-                if (post.Message != null)
-                {
-                    listBoxViewPosts.Invoke(new Action(() => listBoxViewPosts.Items.Add(post.Message)));
-                }
-                else if (post.Caption != null)
-                {
-                  listBoxViewPosts.Invoke(new Action(() => listBoxViewPosts.Items.Add(post.Caption)));
-                }
-                else
-                {
-                  listBoxViewPosts.Invoke(new Action(() => listBoxViewPosts.Items.Add($"[{post.Type}]")));
-                }
-            }
-
-            if (listBoxViewPosts.Items.Count == 0)
-            {
-                MessageBox.Show("No Posts to retrieve :(", k_TitleToMessagBox);
-            }
-               */
             FacebookObjectCollection<Post> allPosts = null;
 
             Task.Run(() =>
             {
                 allPosts = r_FormMain.LoggedInUser.Posts;
-            });
 
-            if (!listBoxViewPosts.InvokeRequired)
-            {
-                postBindingSource.DataSource = allPosts;
-            }
-            else
-            {
-                listBoxViewPosts.Invoke(new Action(() => postBindingSource.DataSource = allPosts));
-            }
+                if (!listBoxViewPosts.InvokeRequired)
+                {
+                    postBindingSource.DataSource = allPosts;
+                }
+                else
+                {
+                    listBoxViewPosts.Invoke(new Action(() => postBindingSource.DataSource = allPosts));
+                }
+            });
         }
     }
 }

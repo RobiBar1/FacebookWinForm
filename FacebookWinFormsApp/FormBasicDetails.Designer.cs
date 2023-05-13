@@ -32,9 +32,8 @@ namespace BasicFacebookFeatures
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label captionLabel;
             System.Windows.Forms.Label createdTimeLabel;
-            System.Windows.Forms.Label descriptionLabel;
+            System.Windows.Forms.Label messageLabel;
             System.Windows.Forms.Label nameLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBasicDetails));
             this.button_Albums = new System.Windows.Forms.Button();
@@ -45,63 +44,24 @@ namespace BasicFacebookFeatures
             this.listBoxLikedPages = new System.Windows.Forms.ListBox();
             this.buttonViewPosts = new System.Windows.Forms.Button();
             this.listBoxViewPosts = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.captionTextBox = new System.Windows.Forms.TextBox();
             this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.createdTimeLabel1 = new System.Windows.Forms.Label();
+            this.messageTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            captionLabel = new System.Windows.Forms.Label();
             createdTimeLabel = new System.Windows.Forms.Label();
-            descriptionLabel = new System.Windows.Forms.Label();
+            messageLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // captionLabel
-            // 
-            captionLabel.AutoSize = true;
-            captionLabel.Location = new System.Drawing.Point(83, 64);
-            captionLabel.Name = "captionLabel";
-            captionLabel.Size = new System.Drawing.Size(68, 20);
-            captionLabel.TabIndex = 0;
-            captionLabel.Text = "Caption:";
-            // 
-            // createdTimeLabel
-            // 
-            createdTimeLabel.AutoSize = true;
-            createdTimeLabel.Location = new System.Drawing.Point(83, 97);
-            createdTimeLabel.Name = "createdTimeLabel";
-            createdTimeLabel.Size = new System.Drawing.Size(108, 20);
-            createdTimeLabel.TabIndex = 2;
-            createdTimeLabel.Text = "Created Time:";
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(83, 128);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(93, 20);
-            descriptionLabel.TabIndex = 4;
-            descriptionLabel.Text = "Description:";
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(83, 160);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(55, 20);
-            nameLabel.TabIndex = 6;
-            nameLabel.Text = "Name:";
             // 
             // button_Albums
             // 
             this.button_Albums.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button_Albums.Location = new System.Drawing.Point(4, 34);
-            this.button_Albums.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Albums.Location = new System.Drawing.Point(3, 22);
             this.button_Albums.Name = "button_Albums";
-            this.button_Albums.Size = new System.Drawing.Size(213, 35);
+            this.button_Albums.Size = new System.Drawing.Size(142, 23);
             this.button_Albums.TabIndex = 56;
             this.button_Albums.Text = "View albums";
             this.button_Albums.UseVisualStyleBackColor = true;
@@ -110,20 +70,17 @@ namespace BasicFacebookFeatures
             // ListBox_Album
             // 
             this.ListBox_Album.FormattingEnabled = true;
-            this.ListBox_Album.ItemHeight = 20;
-            this.ListBox_Album.Location = new System.Drawing.Point(4, 92);
-            this.ListBox_Album.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ListBox_Album.Location = new System.Drawing.Point(3, 60);
             this.ListBox_Album.Name = "ListBox_Album";
-            this.ListBox_Album.Size = new System.Drawing.Size(211, 164);
+            this.ListBox_Album.Size = new System.Drawing.Size(142, 108);
             this.ListBox_Album.TabIndex = 57;
             // 
             // button_Events
             // 
             this.button_Events.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button_Events.Location = new System.Drawing.Point(306, 34);
-            this.button_Events.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_Events.Location = new System.Drawing.Point(204, 22);
             this.button_Events.Name = "button_Events";
-            this.button_Events.Size = new System.Drawing.Size(226, 35);
+            this.button_Events.Size = new System.Drawing.Size(151, 23);
             this.button_Events.TabIndex = 58;
             this.button_Events.Text = "View events";
             this.button_Events.UseVisualStyleBackColor = true;
@@ -132,20 +89,17 @@ namespace BasicFacebookFeatures
             // ListBox_Events
             // 
             this.ListBox_Events.FormattingEnabled = true;
-            this.ListBox_Events.ItemHeight = 20;
-            this.ListBox_Events.Location = new System.Drawing.Point(306, 92);
-            this.ListBox_Events.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ListBox_Events.Location = new System.Drawing.Point(204, 60);
             this.ListBox_Events.Name = "ListBox_Events";
-            this.ListBox_Events.Size = new System.Drawing.Size(224, 164);
+            this.ListBox_Events.Size = new System.Drawing.Size(151, 108);
             this.ListBox_Events.TabIndex = 59;
             // 
             // LikedPages
             // 
             this.LikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.LikedPages.Location = new System.Drawing.Point(4, 306);
-            this.LikedPages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LikedPages.Location = new System.Drawing.Point(3, 199);
             this.LikedPages.Name = "LikedPages";
-            this.LikedPages.Size = new System.Drawing.Size(211, 47);
+            this.LikedPages.Size = new System.Drawing.Size(141, 31);
             this.LikedPages.TabIndex = 60;
             this.LikedPages.Text = "View Liked Pages";
             this.LikedPages.UseVisualStyleBackColor = true;
@@ -154,20 +108,17 @@ namespace BasicFacebookFeatures
             // listBoxLikedPages
             // 
             this.listBoxLikedPages.FormattingEnabled = true;
-            this.listBoxLikedPages.ItemHeight = 20;
-            this.listBoxLikedPages.Location = new System.Drawing.Point(4, 385);
-            this.listBoxLikedPages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxLikedPages.Location = new System.Drawing.Point(3, 250);
             this.listBoxLikedPages.Name = "listBoxLikedPages";
-            this.listBoxLikedPages.Size = new System.Drawing.Size(213, 164);
+            this.listBoxLikedPages.Size = new System.Drawing.Size(143, 108);
             this.listBoxLikedPages.TabIndex = 61;
             // 
             // buttonViewPosts
             // 
             this.buttonViewPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonViewPosts.Location = new System.Drawing.Point(306, 318);
-            this.buttonViewPosts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonViewPosts.Location = new System.Drawing.Point(204, 207);
             this.buttonViewPosts.Name = "buttonViewPosts";
-            this.buttonViewPosts.Size = new System.Drawing.Size(226, 35);
+            this.buttonViewPosts.Size = new System.Drawing.Size(151, 23);
             this.buttonViewPosts.TabIndex = 68;
             this.buttonViewPosts.Text = "View posts";
             this.buttonViewPosts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -179,70 +130,87 @@ namespace BasicFacebookFeatures
             this.listBoxViewPosts.DataSource = this.postBindingSource;
             this.listBoxViewPosts.DisplayMember = "Name";
             this.listBoxViewPosts.FormattingEnabled = true;
-            this.listBoxViewPosts.ItemHeight = 20;
-            this.listBoxViewPosts.Location = new System.Drawing.Point(306, 385);
-            this.listBoxViewPosts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxViewPosts.Location = new System.Drawing.Point(204, 250);
             this.listBoxViewPosts.Name = "listBoxViewPosts";
-            this.listBoxViewPosts.Size = new System.Drawing.Size(224, 164);
+            this.listBoxViewPosts.Size = new System.Drawing.Size(151, 108);
             this.listBoxViewPosts.TabIndex = 69;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(captionLabel);
-            this.panel1.Controls.Add(this.captionTextBox);
-            this.panel1.Controls.Add(createdTimeLabel);
-            this.panel1.Controls.Add(this.createdTimeDateTimePicker);
-            this.panel1.Controls.Add(descriptionLabel);
-            this.panel1.Controls.Add(this.descriptionTextBox);
-            this.panel1.Controls.Add(nameLabel);
-            this.panel1.Controls.Add(this.nameTextBox);
-            this.panel1.Location = new System.Drawing.Point(537, 359);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 203);
-            this.panel1.TabIndex = 70;
-            // 
-            // captionTextBox
-            // 
-            this.captionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Caption", true));
-            this.captionTextBox.Location = new System.Drawing.Point(197, 61);
-            this.captionTextBox.Name = "captionTextBox";
-            this.captionTextBox.Size = new System.Drawing.Size(200, 26);
-            this.captionTextBox.TabIndex = 1;
             // 
             // postBindingSource
             // 
             this.postBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Post);
             // 
-            // createdTimeDateTimePicker
+            // panel1
             // 
-            this.createdTimeDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.postBindingSource, "CreatedTime", true));
-            this.createdTimeDateTimePicker.Location = new System.Drawing.Point(197, 93);
-            this.createdTimeDateTimePicker.Name = "createdTimeDateTimePicker";
-            this.createdTimeDateTimePicker.Size = new System.Drawing.Size(200, 26);
-            this.createdTimeDateTimePicker.TabIndex = 3;
+            this.panel1.Controls.Add(createdTimeLabel);
+            this.panel1.Controls.Add(this.createdTimeLabel1);
+            this.panel1.Controls.Add(messageLabel);
+            this.panel1.Controls.Add(this.messageTextBox);
+            this.panel1.Controls.Add(nameLabel);
+            this.panel1.Controls.Add(this.nameTextBox);
+            this.panel1.Location = new System.Drawing.Point(361, 250);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(231, 113);
+            this.panel1.TabIndex = 70;
             // 
-            // descriptionTextBox
+            // createdTimeLabel
             // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(197, 125);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(200, 26);
-            this.descriptionTextBox.TabIndex = 5;
+            createdTimeLabel.AutoSize = true;
+            createdTimeLabel.Location = new System.Drawing.Point(32, 21);
+            createdTimeLabel.Name = "createdTimeLabel";
+            createdTimeLabel.Size = new System.Drawing.Size(73, 13);
+            createdTimeLabel.TabIndex = 0;
+            createdTimeLabel.Text = "Created Time:";
+            // 
+            // createdTimeLabel1
+            // 
+            this.createdTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "CreatedTime", true));
+            this.createdTimeLabel1.Location = new System.Drawing.Point(111, 21);
+            this.createdTimeLabel1.Name = "createdTimeLabel1";
+            this.createdTimeLabel1.Size = new System.Drawing.Size(100, 23);
+            this.createdTimeLabel1.TabIndex = 1;
+            this.createdTimeLabel1.Text = "label1";
+            // 
+            // messageLabel
+            // 
+            messageLabel.AutoSize = true;
+            messageLabel.Location = new System.Drawing.Point(32, 50);
+            messageLabel.Name = "messageLabel";
+            messageLabel.Size = new System.Drawing.Size(53, 13);
+            messageLabel.TabIndex = 2;
+            messageLabel.Text = "Message:";
+            // 
+            // messageTextBox
+            // 
+            this.messageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Message", true));
+            this.messageTextBox.Location = new System.Drawing.Point(111, 47);
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(100, 20);
+            this.messageTextBox.TabIndex = 3;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(32, 76);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.TabIndex = 4;
+            nameLabel.Text = "Name:";
             // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(197, 157);
+            this.nameTextBox.Location = new System.Drawing.Point(111, 73);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(200, 26);
-            this.nameTextBox.TabIndex = 7;
+            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.TabIndex = 5;
             // 
             // FormBasicDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(954, 652);
+            this.ClientSize = new System.Drawing.Size(592, 369);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBoxViewPosts);
             this.Controls.Add(this.buttonViewPosts);
@@ -253,11 +221,12 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.ListBox_Album);
             this.Controls.Add(this.button_Albums);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBasicDetails";
             this.Text = "Basic User Details";
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,11 +241,10 @@ namespace BasicFacebookFeatures
         private System.Windows.Forms.ListBox listBoxLikedPages;
         private System.Windows.Forms.Button buttonViewPosts;
         private System.Windows.Forms.ListBox listBoxViewPosts;
-        private Panel panel1;
-        private TextBox captionTextBox;
         private BindingSource postBindingSource;
-        private DateTimePicker createdTimeDateTimePicker;
-        private TextBox descriptionTextBox;
+        private Panel panel1;
+        private Label createdTimeLabel1;
+        private TextBox messageTextBox;
         private TextBox nameTextBox;
     }
 }
