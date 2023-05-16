@@ -8,14 +8,14 @@ namespace FacebookLogic
     {
         private string m_UserMessage;
         private string m_UserHours;
-        private System.Timers.Timer m_TimerToUploadPost = null;
+        private System.Timers.Timer m_TimerToUploadPost;
 
         public event Action<MessageSchedulingLogic> PostUpload;
 
         public bool UploadSuccessfully { get; set; }
 
-        private User loggedInUser { get; set; }
-
+        private User loggedInUser { get; set; } 
+        
         private string userHours
         {
             get

@@ -6,13 +6,13 @@ namespace FacebookLogic
     {
         private readonly User r_LoggedInUser;
 
-        public FriendsLogic(User i_RLoggedInUser)
+        public FriendsLogic(User i_LoggedInUser)
         {
-            r_LoggedInUser = i_RLoggedInUser;
+            r_LoggedInUser = i_LoggedInUser;
             AvgLikedImage = 0;
         }
 
-        private bool CalculateHasHappened
+        private bool calculateHasHappened
         { get; set; } = false;
 
         public int MinLikedImage
@@ -24,19 +24,11 @@ namespace FacebookLogic
         public int AvgLikedImage
         { get; set; }
 
-        private User RLoggedInUser
-        {
-            get
-            {
-                return r_LoggedInUser;
-            }
-        }
-
         public void CalculateMinMaxAvgLikes()
         {
             int imageCounter = 0;
 
-            foreach (Post post in RLoggedInUser.Posts)
+            foreach (Post post in r_LoggedInUser.Posts)
             {
                 if (post.Type == Post.eType.photo)
                 {
@@ -60,7 +52,7 @@ namespace FacebookLogic
                 AvgLikedImage /= imageCounter;
             }
 
-            CalculateHasHappened = true;
+            calculateHasHappened = true;
         }
     }
 }

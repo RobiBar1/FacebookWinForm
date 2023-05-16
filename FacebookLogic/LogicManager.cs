@@ -21,8 +21,8 @@ namespace FacebookLogic
             s_User = i_User;
 
             return Instance;
-        }
-
+        } 
+        
         public static LogicManager Instance
         {
             get
@@ -89,7 +89,7 @@ namespace FacebookLogic
 
         private void checkIfCalculated()
         {
-            if (!r_ActivityStaticsLogic.isCalculated)
+            if (!r_ActivityStaticsLogic.IsCalculated)
             {
                 r_ActivityStaticsLogic.ActivityStatics();
             }
@@ -103,6 +103,7 @@ namespace FacebookLogic
         }
 
         #endregion ActivityStaticsLogic
+        
         private LogicManager(User i_User)
         {
             r_ActivityStaticsLogic = new ActivityStaticsLogic(i_User);

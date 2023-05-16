@@ -20,11 +20,11 @@ namespace FacebookLogic
 
         public int MaxActivity { get; private set; }
 
-        public bool isCalculated { get; private set; }
+        public bool IsCalculated { get; private set; }
 
         public void ActivityStatics()
         {
-            isCalculated = true;
+            IsCalculated = true;
             MinActivity = int.MaxValue;
             MaxActivity = int.MinValue;
             int numberOfMonth = 12;

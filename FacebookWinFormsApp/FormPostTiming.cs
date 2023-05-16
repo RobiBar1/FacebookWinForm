@@ -17,8 +17,8 @@ namespace BasicFacebookFeatures
             InitializeComponent();
             BackgroundImage = r_BackgroundImage;
             r_FormMain = i_FormMain;
-            LogicManager.CreateManager(r_FormMain.LoggedInUser);
         }
+
         private void buttOnPost_Click(object sender, EventArgs e)
         {
             MessageSchedulingLogic messageScheduling = new MessageSchedulingLogic();
