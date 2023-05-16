@@ -56,12 +56,43 @@ namespace BasicFacebookFeatures
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // createdTimeLabel
+            // 
+            createdTimeLabel.AutoSize = true;
+            createdTimeLabel.Location = new System.Drawing.Point(6, 11);
+            createdTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            createdTimeLabel.Name = "createdTimeLabel";
+            createdTimeLabel.Size = new System.Drawing.Size(92, 16);
+            createdTimeLabel.TabIndex = 0;
+            createdTimeLabel.Text = "Created Time:";
+            // 
+            // messageLabel
+            // 
+            messageLabel.AutoSize = true;
+            messageLabel.Location = new System.Drawing.Point(6, 47);
+            messageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            messageLabel.Name = "messageLabel";
+            messageLabel.Size = new System.Drawing.Size(67, 16);
+            messageLabel.TabIndex = 2;
+            messageLabel.Text = "Message:";
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(6, 79);
+            nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(47, 16);
+            nameLabel.TabIndex = 4;
+            nameLabel.Text = "Name:";
+            // 
             // button_Albums
             // 
             this.button_Albums.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button_Albums.Location = new System.Drawing.Point(3, 22);
+            this.button_Albums.Location = new System.Drawing.Point(4, 27);
+            this.button_Albums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_Albums.Name = "button_Albums";
-            this.button_Albums.Size = new System.Drawing.Size(142, 23);
+            this.button_Albums.Size = new System.Drawing.Size(189, 28);
             this.button_Albums.TabIndex = 56;
             this.button_Albums.Text = "View albums";
             this.button_Albums.UseVisualStyleBackColor = true;
@@ -70,17 +101,20 @@ namespace BasicFacebookFeatures
             // ListBox_Album
             // 
             this.ListBox_Album.FormattingEnabled = true;
-            this.ListBox_Album.Location = new System.Drawing.Point(3, 60);
+            this.ListBox_Album.ItemHeight = 16;
+            this.ListBox_Album.Location = new System.Drawing.Point(4, 74);
+            this.ListBox_Album.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListBox_Album.Name = "ListBox_Album";
-            this.ListBox_Album.Size = new System.Drawing.Size(142, 108);
+            this.ListBox_Album.Size = new System.Drawing.Size(188, 132);
             this.ListBox_Album.TabIndex = 57;
             // 
             // button_Events
             // 
             this.button_Events.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button_Events.Location = new System.Drawing.Point(204, 22);
+            this.button_Events.Location = new System.Drawing.Point(272, 27);
+            this.button_Events.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_Events.Name = "button_Events";
-            this.button_Events.Size = new System.Drawing.Size(151, 23);
+            this.button_Events.Size = new System.Drawing.Size(201, 28);
             this.button_Events.TabIndex = 58;
             this.button_Events.Text = "View events";
             this.button_Events.UseVisualStyleBackColor = true;
@@ -89,17 +123,20 @@ namespace BasicFacebookFeatures
             // ListBox_Events
             // 
             this.ListBox_Events.FormattingEnabled = true;
-            this.ListBox_Events.Location = new System.Drawing.Point(204, 60);
+            this.ListBox_Events.ItemHeight = 16;
+            this.ListBox_Events.Location = new System.Drawing.Point(272, 74);
+            this.ListBox_Events.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListBox_Events.Name = "ListBox_Events";
-            this.ListBox_Events.Size = new System.Drawing.Size(151, 108);
+            this.ListBox_Events.Size = new System.Drawing.Size(200, 132);
             this.ListBox_Events.TabIndex = 59;
             // 
             // LikedPages
             // 
             this.LikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.LikedPages.Location = new System.Drawing.Point(3, 199);
+            this.LikedPages.Location = new System.Drawing.Point(4, 245);
+            this.LikedPages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LikedPages.Name = "LikedPages";
-            this.LikedPages.Size = new System.Drawing.Size(141, 31);
+            this.LikedPages.Size = new System.Drawing.Size(188, 38);
             this.LikedPages.TabIndex = 60;
             this.LikedPages.Text = "View Liked Pages";
             this.LikedPages.UseVisualStyleBackColor = true;
@@ -108,17 +145,20 @@ namespace BasicFacebookFeatures
             // listBoxLikedPages
             // 
             this.listBoxLikedPages.FormattingEnabled = true;
-            this.listBoxLikedPages.Location = new System.Drawing.Point(3, 250);
+            this.listBoxLikedPages.ItemHeight = 16;
+            this.listBoxLikedPages.Location = new System.Drawing.Point(4, 308);
+            this.listBoxLikedPages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxLikedPages.Name = "listBoxLikedPages";
-            this.listBoxLikedPages.Size = new System.Drawing.Size(143, 108);
+            this.listBoxLikedPages.Size = new System.Drawing.Size(189, 132);
             this.listBoxLikedPages.TabIndex = 61;
             // 
             // buttonViewPosts
             // 
             this.buttonViewPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonViewPosts.Location = new System.Drawing.Point(204, 207);
+            this.buttonViewPosts.Location = new System.Drawing.Point(272, 255);
+            this.buttonViewPosts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonViewPosts.Name = "buttonViewPosts";
-            this.buttonViewPosts.Size = new System.Drawing.Size(151, 23);
+            this.buttonViewPosts.Size = new System.Drawing.Size(201, 28);
             this.buttonViewPosts.TabIndex = 68;
             this.buttonViewPosts.Text = "View posts";
             this.buttonViewPosts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -127,12 +167,15 @@ namespace BasicFacebookFeatures
             // 
             // listBoxViewPosts
             // 
+            this.listBoxViewPosts.Cursor = System.Windows.Forms.Cursors.Default;
             this.listBoxViewPosts.DataSource = this.postBindingSource;
-            this.listBoxViewPosts.DisplayMember = "Name";
+            this.listBoxViewPosts.DisplayMember = "CreatedTime";
             this.listBoxViewPosts.FormattingEnabled = true;
-            this.listBoxViewPosts.Location = new System.Drawing.Point(204, 250);
+            this.listBoxViewPosts.ItemHeight = 16;
+            this.listBoxViewPosts.Location = new System.Drawing.Point(272, 308);
+            this.listBoxViewPosts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxViewPosts.Name = "listBoxViewPosts";
-            this.listBoxViewPosts.Size = new System.Drawing.Size(151, 108);
+            this.listBoxViewPosts.Size = new System.Drawing.Size(200, 132);
             this.listBoxViewPosts.TabIndex = 69;
             // 
             // postBindingSource
@@ -141,76 +184,54 @@ namespace BasicFacebookFeatures
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(createdTimeLabel);
             this.panel1.Controls.Add(this.createdTimeLabel1);
             this.panel1.Controls.Add(messageLabel);
             this.panel1.Controls.Add(this.messageTextBox);
             this.panel1.Controls.Add(nameLabel);
             this.panel1.Controls.Add(this.nameTextBox);
-            this.panel1.Location = new System.Drawing.Point(361, 250);
+            this.panel1.Location = new System.Drawing.Point(481, 308);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 113);
+            this.panel1.Size = new System.Drawing.Size(308, 139);
             this.panel1.TabIndex = 70;
-            // 
-            // createdTimeLabel
-            // 
-            createdTimeLabel.AutoSize = true;
-            createdTimeLabel.Location = new System.Drawing.Point(32, 21);
-            createdTimeLabel.Name = "createdTimeLabel";
-            createdTimeLabel.Size = new System.Drawing.Size(73, 13);
-            createdTimeLabel.TabIndex = 0;
-            createdTimeLabel.Text = "Created Time:";
             // 
             // createdTimeLabel1
             // 
             this.createdTimeLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "CreatedTime", true));
-            this.createdTimeLabel1.Location = new System.Drawing.Point(111, 21);
+            this.createdTimeLabel1.Location = new System.Drawing.Point(111, 11);
+            this.createdTimeLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.createdTimeLabel1.Name = "createdTimeLabel1";
-            this.createdTimeLabel1.Size = new System.Drawing.Size(100, 23);
+            this.createdTimeLabel1.Size = new System.Drawing.Size(133, 28);
             this.createdTimeLabel1.TabIndex = 1;
             this.createdTimeLabel1.Text = "label1";
-            // 
-            // messageLabel
-            // 
-            messageLabel.AutoSize = true;
-            messageLabel.Location = new System.Drawing.Point(32, 50);
-            messageLabel.Name = "messageLabel";
-            messageLabel.Size = new System.Drawing.Size(53, 13);
-            messageLabel.TabIndex = 2;
-            messageLabel.Text = "Message:";
             // 
             // messageTextBox
             // 
             this.messageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Message", true));
-            this.messageTextBox.Location = new System.Drawing.Point(111, 47);
+            this.messageTextBox.Location = new System.Drawing.Point(111, 43);
+            this.messageTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.messageTextBox.Name = "messageTextBox";
-            this.messageTextBox.Size = new System.Drawing.Size(100, 20);
+            this.messageTextBox.Size = new System.Drawing.Size(132, 22);
             this.messageTextBox.TabIndex = 3;
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(32, 76);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(38, 13);
-            nameLabel.TabIndex = 4;
-            nameLabel.Text = "Name:";
             // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.postBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(111, 73);
+            this.nameTextBox.Location = new System.Drawing.Point(111, 75);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(132, 22);
             this.nameTextBox.TabIndex = 5;
             // 
             // FormBasicDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 369);
+            this.ClientSize = new System.Drawing.Size(789, 454);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBoxViewPosts);
             this.Controls.Add(this.buttonViewPosts);
@@ -221,7 +242,7 @@ namespace BasicFacebookFeatures
             this.Controls.Add(this.ListBox_Album);
             this.Controls.Add(this.button_Albums);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormBasicDetails";
             this.Text = "Basic User Details";
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
