@@ -30,7 +30,7 @@ namespace FacebookLogic
             int numberOfMonth = 12;
             int[] postsListMonths = new int[numberOfMonth + 1];
 
-            foreach (Post post in r_UserLoggedIn.Posts)
+            foreach (Post post in LogicManager.PostIterator)
             {
                 DateTime postUpdateTime = (DateTime)post.UpdateTime;
                 postsListMonths[postUpdateTime.Month]++;

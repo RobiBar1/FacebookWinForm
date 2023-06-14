@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BasicFacebookFeatures.Properties;
+using FacebookLogic;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures

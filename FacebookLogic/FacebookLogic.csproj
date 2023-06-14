@@ -46,6 +46,7 @@
     <Compile Include="FriendsLogic.cs" />
     <Compile Include="LogicManager.cs" />
     <Compile Include="MessageSchedulingLogic.cs" />
+    <Compile Include="PostIterator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CefSharp">

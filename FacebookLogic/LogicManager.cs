@@ -16,13 +16,15 @@ namespace FacebookLogic
         private static LogicManager s_LogicMenager;
         private static User s_User;
 
+        public static PostIterator PostIterator;
+
         public static LogicManager CreateManager(User i_User)
         {
             s_User = i_User;
-
+            PostIterator = new PostIterator(i_User.Posts);
             return Instance;
-        } 
-        
+        }
+
         public static LogicManager Instance
         {
             get
@@ -103,7 +105,6 @@ namespace FacebookLogic
         }
 
         #endregion ActivityStaticsLogic
-        
         private LogicManager(User i_User)
         {
             r_ActivityStaticsLogic = new ActivityStaticsLogic(i_User);

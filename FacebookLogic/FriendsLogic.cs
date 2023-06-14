@@ -28,7 +28,7 @@ namespace FacebookLogic
         {
             int imageCounter = 0;
 
-            foreach (Post post in r_LoggedInUser.Posts)
+            foreach (Post post in LogicManager.PostIterator)
             {
                 if (post.Type == Post.eType.photo)
                 {
