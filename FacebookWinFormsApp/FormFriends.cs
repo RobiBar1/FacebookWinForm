@@ -8,10 +8,9 @@ namespace BasicFacebookFeatures
 {
     public partial class FormFriends : Form
     {
-        private const string k_ErrorMessageTitle = "Cannot import data";
-        private const string k_ErrorMessage = "This information cannot currently be uploaded from Facebook servers";
         private readonly FormMain r_FormMain;
         private readonly Image r_BackgroundImage = Resources.facebookFriends;
+        private readonly ErrorMessageVisitor r_ErrorMessageVisitor;
 
         public FormFriends(FormMain i_FormMain)
         {
@@ -19,6 +18,7 @@ namespace BasicFacebookFeatures
             LogicManager.CreateManager(r_FormMain.LoggedInUser);
             InitializeComponent();
             BackgroundImage = r_BackgroundImage;
+            r_ErrorMessageVisitor = new ErrorMessageVisitor();
         }
 
         private void buttonFavoritePhoto_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace BasicFacebookFeatures
             }
             catch (Exception exception)
             {
-                MessageBox.Show(k_ErrorMessage, k_ErrorMessageTitle);
+                r_ErrorMessageVisitor.ShowConnectingToFacebookServersError();
             }
         }
 
@@ -41,7 +41,7 @@ namespace BasicFacebookFeatures
             }
             catch (Exception exception)
             {
-                MessageBox.Show(k_ErrorMessage, k_ErrorMessageTitle);
+                r_ErrorMessageVisitor.ShowConnectingToFacebookServersError();
             }
         }
 
@@ -53,7 +53,7 @@ namespace BasicFacebookFeatures
             }
             catch (Exception exception)
             {
-                MessageBox.Show(k_ErrorMessage, k_ErrorMessageTitle);
+                r_ErrorMessageVisitor.ShowConnectingToFacebookServersError();
             }
         }
     }

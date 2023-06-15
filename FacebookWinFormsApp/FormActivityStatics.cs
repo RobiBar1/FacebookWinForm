@@ -8,9 +8,9 @@ namespace BasicFacebookFeatures
 {
     public partial class FormActivityStatics : Form
     {
-        private const string k_Title = "Error";
         private readonly Image r_BackgroundImage = Resources.statisticFacebook;
         private readonly FormMain r_FormMain;
+        private readonly ErrorMessageVisitor r_ErrorMessageVisitor;
 
         public FormActivityStatics(FormMain i_FormMain)
         {
@@ -18,6 +18,7 @@ namespace BasicFacebookFeatures
             r_FormMain = i_FormMain;
             LogicManager.CreateManager(r_FormMain.LoggedInUser);
             BackgroundImage = r_BackgroundImage;
+            r_ErrorMessageVisitor = new ErrorMessageVisitor();
         }
 
         private void buttonMaximumActivity_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace BasicFacebookFeatures
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, k_Title);
+                r_ErrorMessageVisitor.ShowGeneralProblemDueToException();
             }
         }
 
@@ -40,7 +41,7 @@ namespace BasicFacebookFeatures
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, k_Title);
+                r_ErrorMessageVisitor.ShowGeneralProblemDueToException();
             }
         }
     }

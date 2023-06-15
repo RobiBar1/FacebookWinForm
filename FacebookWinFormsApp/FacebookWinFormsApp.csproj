@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eFormType.cs" />
+    <Compile Include="ErrorMessageVisitor.cs" />
     <Compile Include="FormActivityStatics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +126,7 @@
     <Compile Include="FormPostTiming.Designer.cs">
       <DependentUpon>FormPostTiming.cs</DependentUpon>
     </Compile>
+    <Compile Include="IErrorMessageVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormActivityStatics.resx">

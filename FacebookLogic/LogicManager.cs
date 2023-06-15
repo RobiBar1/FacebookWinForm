@@ -10,11 +10,11 @@ namespace FacebookLogic
 {
     public sealed class LogicManager
     {
-        private readonly ActivityStaticsLogic r_ActivityStaticsLogic;
-        private readonly FriendsLogic r_FriendsLogic;
         private static readonly object sr_LockObj = new object();
         private static LogicManager s_LogicMenager;
         private static User s_User;
+        private readonly ActivityStaticsLogic r_ActivityStaticsLogic;
+        private readonly FriendsLogic r_FriendsLogic;
 
         public static PostIterator PostIterator;
 

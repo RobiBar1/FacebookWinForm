@@ -12,8 +12,6 @@ namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
-        private const string k_LoginError = "First you need to be logged in!";
-        private const string k_LoginErrorTitle = "Not connected";
         private const string k_AppId = "226386399872134";
         private static readonly string[] sr_Paremeters =
         {
@@ -34,6 +32,7 @@ namespace BasicFacebookFeatures
         };
 
         private readonly Image r_BackgroundImage = Resources.facebookLikeImage;
+        private readonly ErrorMessageVisitor r_ErrorMessageVisitor;
         private LoginResult m_LoginResult;
         private User m_LoggedInUser;
 
@@ -43,6 +42,7 @@ namespace BasicFacebookFeatures
             FacebookService.s_CollectionLimit = 100;
             BackgroundImage = r_BackgroundImage;
             userWasClick = true;
+            r_ErrorMessageVisitor = new ErrorMessageVisitor();
         }
 
         public User LoggedInUser
@@ -92,7 +92,7 @@ namespace BasicFacebookFeatures
             }
             else
             {
-                MessageBox.Show(k_LoginError, k_LoginErrorTitle);
+                r_ErrorMessageVisitor.ShowLoginError();
             }
         }
 
@@ -149,7 +149,7 @@ namespace BasicFacebookFeatures
             }
             else
             {
-                MessageBox.Show(k_LoginError, k_LoginErrorTitle);
+                r_ErrorMessageVisitor.ShowLoginError();
             }
         }
 
@@ -161,7 +161,7 @@ namespace BasicFacebookFeatures
             }
             else
             {
-                MessageBox.Show(k_LoginError, k_LoginErrorTitle);
+                r_ErrorMessageVisitor.ShowLoginError();
             }
         }
 
@@ -173,7 +173,7 @@ namespace BasicFacebookFeatures
             }
             else
             {
-                MessageBox.Show(k_LoginError, k_LoginErrorTitle);
+                r_ErrorMessageVisitor.ShowLoginError();
             }
         }
 
@@ -185,7 +185,7 @@ namespace BasicFacebookFeatures
             }
             else
             {
-                MessageBox.Show(k_LoginError, k_LoginErrorTitle);
+                r_ErrorMessageVisitor.ShowLoginError();
             }
         }
 
@@ -222,7 +222,7 @@ namespace BasicFacebookFeatures
             if (m_LoginResult == null && userWasClick)
             {
                 userWasClick = !userWasClick;
-                MessageBox.Show(k_LoginError, k_LoginErrorTitle);
+                r_ErrorMessageVisitor.ShowLoginError();
                 checkBoxRememberMe.Checked = false;
             }
             else if (m_LoginResult == null)

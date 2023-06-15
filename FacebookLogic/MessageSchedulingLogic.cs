@@ -14,8 +14,8 @@ namespace FacebookLogic
 
         public bool UploadSuccessfully { get; set; }
 
-        private User loggedInUser { get; set; } 
-        
+        private User loggedInUser { get; set; }
+
         private string userHours
         {
             get
