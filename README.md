@@ -1,8 +1,7 @@
 - [Installation](#installation)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/RobiBar1/FacebookWinForm)
-![Repo size](https://img.shields.io/github/repo-size/RobiBar1/FacebookWinForm)
-![License](https://img.shields.io/github/license/RobiBar1/FacebookWinForm)
+![.NET](https://img.shields.io/badge/Made%20with-.NET-blue)
+
 "Explanation of the features in words and UML.docx"
 
 "3 Design Patterns add-Factory, Singleton, Facade &UML.docx"
